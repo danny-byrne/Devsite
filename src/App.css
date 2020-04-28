@@ -32,11 +32,21 @@
 
 
 
-.WebBox {
-  background-color: #b9b9b9;
+.SampleBox {
+  margin-top: 20px;
   width: 50%;
-  height: 500px;
+  height: 700px;
+  position: relative;
+  /* border-style: solid;
   border-color: #838383;
+  border-radius: 2rem;
+  border-width: 1px; */
+}
+
+.Sample {
+  background-color: lightblue;
+  width: 99%;
+  height: 90%;
   position: relative;
   border-style: solid;
   border-color: #838383;
