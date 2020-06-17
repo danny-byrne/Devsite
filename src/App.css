@@ -1,58 +1,14 @@
-.App {
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 20px;
-  /* background-color: lightblue; */
-  top: 20px;
-  bottom: 20px;
-  color: rgb(83, 83, 83);
-}
-
-
-.NavContainer {
-  display: table;
-  width: 90%;
-  align-items: center;
-  /* border-style: solid; */
-  border-color: #838383;
-  border-radius: 2rem;
-  border-width: 1px;
-  margin: auto;
-}
-
-.NavButton {
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 25%;
-}
-
-.col1, .col2, .col3 {
-  display:table-cell;
-}
 
 
 
-.SampleBox {
-  margin-top: 20px;
-  width: 50%;
-  height: 700px;
-  position: relative;
-  /* border-style: solid;
-  border-color: #838383;
-  border-radius: 2rem;
-  border-width: 1px; */
-}
 
-.Sample {
-  background-color: lightblue;
-  width: 99%;
-  height: 90%;
-  position: relative;
-  border-style: solid;
-  border-color: #838383;
-  border-radius: 2rem;
-  border-width: 1px;
-}
+
+
+
+
+
+
+
 
 
 

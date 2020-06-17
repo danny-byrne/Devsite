@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+$base-color: #fdfdfb;
+
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
+body {
+  background: $base-color;
+  font-family: "Lato", sans-serif;
+  min-width: 100vh;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  height: 100vh;
+  background: $base-color;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+}
+
+.Headline {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+
+}
+
+.SampleBox {
+  margin-top: 20px;
+  width: 50%;
+  height: 700px;
+  position: relative;
+  /* border-style: solid;
+  border-color: #838383;
+  border-radius: 2rem;
+  border-width: 1px; */
+}
+
+.NavContainer {
+  display: block;
+  // width: 90%;
+  align-content: center;
+  /* border-style: solid; */
+  border-color: #838383;
+  border-radius: 2rem;
+  border-width: 1px;
+  margin: auto;
+}
+
+.NavButton {
+  display: inline;
+  margin-right: 10%;
+  margin-left: 10%
+}
+
+.Sample {
+  background-color: lightblue;
+  width: 99%;
+  height: 90%;
+  position: relative;
+  border-style: solid;
+  border-color: #838383;
+  border-radius: 2rem;
+  border-width: 1px;
+}
