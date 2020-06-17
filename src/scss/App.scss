@@ -1,16 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
 $base-color: #fdfdfb;
+$button-margin: 3vh;
 
 * {
   padding: 0;
+  width: 100%;
   margin: 0 auto;
+}
+
+h1 {
+  font-size: 5vh;
+}
+
+h3 {
+  font-size: 2.5vh;
 }
 
 body {
   background: $base-color;
   font-family: "Lato", sans-serif;
-  min-width: 100vh;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0;
@@ -22,45 +32,47 @@ body {
   background: $base-color;
   text-align: center;
   font-family: "Lato", sans-serif;
-  font-size: 20px;
 }
 
 .Headline {
   margin-bottom: 2vh;
   margin-top: 2vh;
+}
 
+.text {
+  width: 50vh;
+  font-size: 1.5vh;
 }
 
 .SampleBox {
-  margin-top: 20px;
-  width: 50%;
-  height: 700px;
+  margin-top: $button-margin;
+  width: 50vh;
+  height: 70vh;
   position: relative;
-  /* border-style: solid;
-  border-color: #838383;
-  border-radius: 2rem;
-  border-width: 1px; */
 }
 
 .NavContainer {
   display: block;
-  // width: 90%;
   align-content: center;
-  /* border-style: solid; */
   border-color: #838383;
   border-radius: 2rem;
   border-width: 1px;
   margin: auto;
+  margin-bottom: 2vh;
+  width: 100%;
 }
 
 .NavButton {
   display: inline;
-  margin-right: 10%;
-  margin-left: 10%
+  margin-right: $button-margin;
+  margin-left: $button-margin;
+  font-size: 2vh;
+  cursor: pointer;
 }
 
+
 .Sample {
-  background-color: lightblue;
+  // background-color: lightblue;
   width: 99%;
   height: 90%;
   position: relative;
@@ -68,4 +80,59 @@ body {
   border-color: #838383;
   border-radius: 2rem;
   border-width: 1px;
+}
+
+$fade: 200ms;
+
+.fade-in {
+  animation: fadeIn ease $fade;
+  -webkit-animation: fadeIn ease $fade;
+  -moz-animation: fadeIn ease $fade;
+  -o-animation: fadeIn ease $fade;
+  -ms-animation: fadeIn ease $fade;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
 }
