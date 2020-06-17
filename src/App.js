@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 
+const image = require('./assets/images/Danny1.jpg');
+
 function App() {
   console.log('app rendered')
   const [view, setView] = useState('about');
@@ -49,11 +51,16 @@ function App() {
 
 const About = () => {
   console.log('rendering About View');
-  let text=`Danny Byrne is a software developer, musician, artist, and technologist across many mediums. 
-  He enjoys exploring new ideas, personal transformational practices, and the wild places of the American West.`;
+  let text=`Danny Byrne is a software developer, artist, and technologist across multiple mediums. 
+  He enjoys exploring new ideas, practices in personal transformation, and seeking the wild places of the American West.`;
 
   return (
-    <div className="text">{text}</div>
+    <>
+      <div className="about-text">{text}</div>
+      <div className="img-container">
+        <img src={image} />
+      </div>
+    </>
   )
 }
 
@@ -64,7 +71,7 @@ const Work = () => {
       <object className="Sample" type="text/html" data="http://www.hookd.dev"></object>
       Hookd is a web-app, npm module, and CLI tool for transforming React components. 
       It was developed using Babel, Typescript, and React. My particular role in this developer tool was creating an algorithm
-      for detecting component structure where ContextAPI was used, and transform AST Nodes to implement useContext accordingly.
+      for detecting component structure where ContextAPI was used, and to confionally modify AST Nodes to injecting useContext hooks accordingly.
     </div>
   )
 }
@@ -72,7 +79,7 @@ const Work = () => {
 const Musician = () => {
   console.log('rendering Musician View');
   return (
-    <div>Some Music</div>
+    <div>Stay Tuned...</div>
   )
 }
 
