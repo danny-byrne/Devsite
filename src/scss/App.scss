@@ -32,6 +32,7 @@ body {
   background: $base-color;
   text-align: center;
   font-family: "Lato", sans-serif;
+   color: #333642
 }
 
 .Headline {
@@ -105,6 +106,39 @@ img {
   border-color: #838383;
   border-radius: 2rem;
   border-width: 1px;
+}
+
+.skill-list {
+  display: block;
+  align-content: center;
+
+  .skill-item {
+    margin-top: 1rem;
+    .category {
+      // background-color: red;
+      color: #377fb4;
+      font-weight: bold;
+      display: inline;
+      font-size: 1rem;
+      padding-right: 1.5vh;
+    }
+    
+    .list {
+      display: inline;
+      font-size: 1.2rem;
+
+      // background-color: blueviolet;
+    }
+  }
+}
+
+.skill {
+  // margin: auto;
+  margin-right: 1vw;
+  margin-bottom: 2vh;
+  width: 100%;
+  color: rgb(1, 114, 129);
+
 }
 
 $fade: 200ms;

@@ -42,7 +42,6 @@ function App() {
         <div className="NavButton" value="musician" onClick={(e) => switchView(e, "musician")}>Creative</div>
       </div>
       <div className="view">{curView(view)}</div>
-      {/* <Work /> */}
 
         
     </div>
@@ -51,14 +50,40 @@ function App() {
 
 const About = () => {
   console.log('rendering About View');
-  let text=`Danny Byrne is a software developer, artist, and technologist across multiple mediums. 
-  He enjoys exploring new ideas, practices in personal transformation, and seeking the wild places of the American West.`;
+  let text=`Danny Byrne is a software developer, technologist, and artist across many mediums. 
+  He enjoys exploring new ideas, engaging in practices in personal transformation, and seeking out the wild places of the American West.`;
+
+  const skills = [
+   { t: 'Languages',
+    c: 'Javascript(ES6+), Typescript' },
+    { t: 'Front End',
+    c: 'React(Hooks), Redux, SASS/SCSS, Webpack, Babel' },
+    { t: 'Back End',
+    c: 'Node.js, Express.js, RESTful, SQL, NoSQL' },
+    { t: 'Miscellaneous',
+    c: 'Websockets, TDD, AWS(ES2, Elastik Beanstalk, DynamoDB, CI/CD' }
+  ]
+
+  const skillList = skills.map(e => {
+    const { t, c } = e;
+    return (
+          <div key={t} className="skill-item">
+            <div className="category">{t}:</div>
+            <div className="list ">{c}</div>
+          </div>
+    )
+  })
+
+  console.log(skillList)
 
   return (
     <>
       <div className="about-text">{text}</div>
       <div className="img-container">
         <img src={image} />
+      </div>
+      <div className="skill-list">
+        {skillList}
       </div>
     </>
   )
@@ -71,7 +96,7 @@ const Work = () => {
       <object className="Sample" type="text/html" data="http://www.hookd.dev"></object>
       Hookd is a web-app, npm module, and CLI tool for transforming React components. 
       It was developed using Babel, Typescript, and React. My particular role in this developer tool was creating an algorithm
-      for detecting component structure where ContextAPI was used, and to confionally modify AST Nodes to injecting useContext hooks accordingly.
+      for detecting component structure where ContextAPI was used, and to conditionally modify AST Nodes to inject useContext and other hooks accordingly.
     </div>
   )
 }
