@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+// import SocialBadge from 'react-social-badge';
 
 const image = require('./assets/images/Danny1.jpg');
 
@@ -55,13 +56,13 @@ const About = () => {
 
   const skills = [
    { t: 'Languages',
-    c: 'Javascript(ES6+), Typescript' },
+    c: 'Javascript(ES6+), Typescript,  HTML5/CSS3' },
     { t: 'Front End',
     c: 'React(Hooks), Redux, SASS/SCSS, Webpack, Babel' },
     { t: 'Back End',
     c: 'Node.js, Express.js, RESTful, SQL, NoSQL' },
     { t: 'Miscellaneous',
-    c: 'Websockets, TDD, AWS(ES2, Elastik Beanstalk, DynamoDB, CI/CD' }
+    c: 'Websockets, TDD, AWS(ES2, Elastik Beanstalk, DynamoDB, CI/CD, OAuth' }
   ]
 
   const skillList = skills.map(e => {
@@ -104,7 +105,7 @@ const Work = () => {
 const Musician = () => {
   console.log('rendering Musician View');
   return (
-    <div>Stay Tuned...</div>
+    <div>Stay Tuned For Content...</div>
   )
 }
 

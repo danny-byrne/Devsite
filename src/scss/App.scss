@@ -42,24 +42,25 @@ body {
 
 .about-text {
   width: 50vh;
-  font-size: 1.5vh;
+  font-size: 1.7vh;
+}
+
+.view {
+  display: block;
+  height: 100vh;
+  // background-color: blueviolet;
 }
 
 $imgContainerSize: 30vh;
 
 .img-container {
   margin-top: 2vh;
+  margin-bottom: 2vh;
+
   /* Set size of crop area. Setting its location happens bellow. */
   width: $imgContainerSize;
   height: $imgContainerSize;
-
-
-
-  overflow: hidden;  /* Crop it like it's hot! */
-
-  /* not part of the implementation; only to display what's going on */
-  // border: 1px solid black;
-  background-color: #ddd;
+  overflow: hidden;  
   border-radius: 50%;
   object-fit: cover;
 }
@@ -80,9 +81,6 @@ img {
 .NavContainer {
   display: block;
   align-content: center;
-  border-color: #838383;
-  border-radius: 2rem;
-  border-width: 1px;
   margin: auto;
   margin-bottom: 2vh;
   width: 100%;
