@@ -62,7 +62,7 @@ const About = () => {
     { t: 'Back End',
     c: 'Node.js, Express.js, RESTful, SQL, NoSQL' },
     { t: 'Miscellaneous',
-    c: 'Websockets, TDD, AWS(ES2, Elastik Beanstalk, DynamoDB, CI/CD, OAuth' }
+    c: 'Websockets, TDD, AWS(ES2, Elastik Beanstalk, DynamoDB), CI/CD, OAuth' }
   ]
 
   const skillList = skills.map(e => {
