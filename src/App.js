@@ -94,7 +94,8 @@ const Work = () => {
   console.log('rendering Work View');
   return (
     <div className="SampleBox">
-      <object className="Sample" type="text/html" data="http://www.hookd.dev"></object>
+      {/* <object className="Sample" type="text/html" data="http://www.hookd.dev"></object> */}
+      <iframe className="Sample" type="text/html" data="http://www.hookd.dev"></iframe>
       Hookd is a web-app, npm module, and CLI tool for transforming React components. 
       It was developed using Babel, Typescript, and React. My particular role in this developer tool was creating an algorithm
       for detecting component structure where ContextAPI was used, and to conditionally modify AST Nodes to inject useContext and other hooks accordingly.
@@ -105,7 +106,7 @@ const Work = () => {
 const Musician = () => {
   console.log('rendering Musician View');
   return (
-    <div>Stay Tuned For Content...</div>
+    <div>Coming Soon...</div>
   )
 }
 
