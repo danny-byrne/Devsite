@@ -97,7 +97,7 @@ const Work = () => {
       {/* <object className="Sample" type="text/html" data="http://www.hookd.dev"></object> */}
       <iframe className="Sample" type="text/html" data="http://www.hookd.dev"></iframe>
       Hookd is a web-app, npm module, and CLI tool for transforming React components. 
-      It was developed using Babel, Typescript, and React. My particular role in this developer tool was creating an algorithm
+      It was developed using Babel, Typescript, and React. One particular contribution of mine to this tool was creating an algorithm
       for detecting component structure where ContextAPI was used, and to conditionally modify AST Nodes to inject useContext and other hooks accordingly.
     </div>
   )
