@@ -32,9 +32,9 @@ export default function App() {
             <h3>Software Developer</h3>
       </div>
       <div className="NavContainer fade-in" >
-        <div className="NavButton" value="about" onClick={(e) => switchView(e, "about")}>About</div>
-        <div className="NavButton" value="work" onClick={(e) => switchView(e, "work")}>Work</div>
-        <div className="NavButton" value="creative" onClick={(e) => switchView(e, "creative")}>Creative</div>
+        <div className="NavButton" value="about" onClick={() => setView("about")}>About</div>
+        <div className="NavButton" value="work" onClick={() => setView("work")}>Work</div>
+        <div className="NavButton" value="creative" onClick={() => setView("creative")}>Creative</div>
       </div>
       <div className="view">{curView(view)}</div>
     </div>
