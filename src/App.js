@@ -3,6 +3,7 @@ import './App.css';
 import About from './components/About';
 import Creative from './components/Creative';
 import Work from './components/Work';
+import Contact from './components/Contact'
 
 
 
@@ -16,14 +17,13 @@ export default function App() {
          return <Work />
       case 'creative':
          return <Creative />
+      case 'contact':
+        return <Contact />
       default:
          return <About />
     }
   }
 
-  const switchView = (e, target) => {
-    setView(target)
-  }
 
   return (
     <div className="App fade-in">
@@ -35,8 +35,12 @@ export default function App() {
         <div className="NavButton" value="about" onClick={() => setView("about")}>About</div>
         <div className="NavButton" value="work" onClick={() => setView("work")}>Work</div>
         <div className="NavButton" value="creative" onClick={() => setView("creative")}>Creative</div>
+        <div className="NavButton" value="creative" onClick={() => setView("contact")}>Contact</div>
       </div>
       <div className="view">{curView(view)}</div>
+      {/* <div className="contact">
+        <Contact />
+      </div> */}
     </div>
   );
 }
