@@ -17,7 +17,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-app.post('send-email', (req, res) => {
+app.post('/send-email', (req, res) => {
   console.log('request: ', req.body)
   let data = req.body;
   let transporter = nodemailer.createTransport({
