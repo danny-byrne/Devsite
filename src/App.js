@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import About from './components/About';
 import Creative from './components/Creative';
 import Work from './components/Work';

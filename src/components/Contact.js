@@ -1,6 +1,14 @@
 import React , { useState } from 'react';
 import axios from 'axios';
 
+/**
+ * eventually implement OATH as described in https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
+ * 
+ * nodemailer tuts: https://www.youtube.com/watch?v=Va9UKGs1bwI
+ * 
+ * API from dev to prod : https://medium.com/the-andela-way/creating-a-react-redux-app-that-consumes-an-api-from-development-to-production-part-1-f03c5cc86ba
+ */
+
 export default function Contact() {
   const [ name, setName ] = useState('');
   const [ message, setMessage ] = useState('');
