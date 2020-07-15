@@ -3,15 +3,23 @@ const express =
   bodyParser = require('body-parser'), 
   nodemailer = require('nodemailer'), 
   cors = require('cors'), path = require('path'), 
-  port = process.env.PORT || 3000, publicPath = path.join(__dirname, '..', 'build');
+  port = process.env.PORT || 3000;
+
 require('dotenv').config();
+
+  let directory = process.env.NODE_ENV === 'development' ? 'public' : 'build',
+  publicPath = path.join(__dirname, '..', directory);
+
 const app = express();
+
+console.log(process.env.NODE_ENV)
 
 app.use(cors());
 app.use(express.static(publicPath));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
@@ -38,17 +46,17 @@ app.post('/send-email', (req, res) => {
             <p>${data.message}</p>`
   };
 
-  console.log('mailOptions are', mailOptions)
+  // console.log('mailOptions are', mailOptions)
 
-  transporter.sendMail(mailOptions,
-  (err, res) => {
+  transporter.sendMail(mailOptions,[
+  (err, info) => {
     if(err) {
       res.send(err)
     } else {
-      res.send('Success')
+      res.send(info.messageId)
     }
     transporter.close();
-  });
+  }]);
 })
 
 app.listen(port, () => {
