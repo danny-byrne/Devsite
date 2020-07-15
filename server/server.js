@@ -7,8 +7,8 @@ const express =
 
 require('dotenv').config();
 
-  let directory = process.env.NODE_ENV === 'development' ? 'public' : 'build',
-  publicPath = path.join(__dirname, '..', directory);
+  // let directory = process.env.NODE_ENV === 'development' ? 'public' : 'build',
+let publicPath = path.join(__dirname, '..', 'build');
 
 const app = express();
 
