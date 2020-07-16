@@ -58,7 +58,7 @@ export default function Contact() {
 
   return (
     <div>
-      <form className="contact-form" onSubmit={(e) => formSubmit(e)}>
+      {/* <form className="contact-form" onSubmit={(e) => formSubmit(e)}>
         <label className="message-name" htmlFor="message-name">Your Name</label>
         <input onChange={e => setName(e.target.value)} name="name" className="message-name" type="text" placeholder="Your Name" value={name}/>
 
@@ -73,8 +73,9 @@ export default function Contact() {
         <div >
             <button type="submit" className="button">{buttonText}</button>
         </div>
-      </form> 
-      {/* <h3>danny.byrne.dev@gmail.com</h3> */}
+      </form>  */}
+      {/* <h2>Contact form coming soon! For now...</h2> */}
+      <h3>danny.byrne.dev@gmail.com</h3>
     </div>
   )
 }
