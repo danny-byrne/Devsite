@@ -54,7 +54,7 @@ app.post('/send-email', (req, res) => {
   transporter.sendMail(mailOptions,[
   (err, info) => {
     if(err) {
-      res.send(err)
+      res.send('there was an error server.js', err)
     } else {
       res.send(info.messageId)
     }
