@@ -21,8 +21,8 @@ export default function Contact() {
   const [ buttonText, setButtonText ] = useState('Send');
 
   let URI = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_URI : process.env.REACT_APP_PROD_URI;
-  // console.log(process.env.REACT_APP_DEV_URI, process.env.REACT_APP_PROD_URI)
-  // console.log(`in ${process.env.NODE_ENV} our URI is ${URI}`)
+  console.log(process.env.REACT_APP_DEV_URI, process.env.REACT_APP_PROD_URI)
+  console.log(`in ${process.env.NODE_ENV} our URI is ${URI}`)
 
   async function formSubmit(e){
     e.preventDefault()

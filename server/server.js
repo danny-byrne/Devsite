@@ -1,3 +1,6 @@
+/**
+ * express.router() option? : https://stackoverflow.com/questions/61852261/nodemailer-not-working-on-heroku-deployment
+ */
 const express = 
   require('express'), 
   bodyParser = require('body-parser'), 
