@@ -1,14 +1,18 @@
 /**
  * express.router() option? : https://stackoverflow.com/questions/61852261/nodemailer-not-working-on-heroku-deployment
+ * 
+ * sending from emailjs
+ * https://sheelahb.com/blog/how-to-send-email-from-react-without-a-backend/
  */
-const express = 
-  require('express'), 
-  bodyParser = require('body-parser'), 
-  nodemailer = require('nodemailer'), 
-  cors = require('cors'), path = require('path'), 
-  port = process.env.PORT || 3000;
+let express = require('express')
+let bodyParser = require('body-parser')
+let cors = require('cors'), path = require('path')
+let port = process.env.PORT || 3000
+let emailjs = require('emailjs')
 
 require('dotenv').config();
+
+emailjs.init(`${process.env.USERID}`)
 
 let directory = process.env.NODE_ENV === 'development' ? 'public' : 'build',
 publicPath = path.join(__dirname, '..', directory);
@@ -54,7 +58,7 @@ app.post('/send-email', (req, res) => {
   transporter.sendMail(mailOptions,[
   (err, info) => {
     if(err) {
-      res.send(err)
+      res.send('there was an error server.js', err)
     } else {
       res.send(info.messageId)
     }

@@ -1,5 +1,8 @@
-import React , { useState } from 'react';
+import React , { useState, useEffect } from 'react';
 import axios from 'axios';
+
+// import { emailjs } from 'emailjs';
+import emailjs from 'emailjs-com'
 // require('dotenv').config();
 
 /**
@@ -14,38 +17,41 @@ import axios from 'axios';
 
 export default function Contact() {
   const [ name, setName ] = useState('');
-  const [ message, setMessage ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ subject, setSubject ] = useState('');
+  const [ message, setMessage ] = useState('');
   const [ sent, setSent ] = useState(false);
   const [ buttonText, setButtonText ] = useState('Send');
+  // useEffect(() => {
+  //   emailjs.init()
+  // })
 
-  let URI = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_URI : process.env.REACT_APP_PROD_URI;
-  console.log(process.env.REACT_APP_DEV_URI, process.env.REACT_APP_PROD_URI)
-  console.log(`in ${process.env.NODE_ENV} our URI is ${URI}`)
+ // let URI = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_URI : process.env.REACT_APP_PROD_URI;
+  // console.log(process.env.REACT_APP_DEV_URI, process.env.REACT_APP_PROD_URI)
+  // console.log(`in ${process.env.NODE_ENV} our URI is ${URI}`)
+  // emailjs.init(`${process.env.REACT_APP_USERID}`)
 
   async function formSubmit(e){
-    e.preventDefault()
+    e.preventDefault(e)
+    // console.log(e.target)
     setButtonText('...sending')
 
     let data = {
-      name: name,
-      email: email,
-      message: message,
-      subject: subject
+        name: name,
+        email: email,
+        message: message,
+        subject: subject
     }
 
-    axios.post(`${URI}/send-email`, data)
-      // .then(res => {
-      //   console.log('sent', res)
-      //   setSent(true) 
-      //   resetForm()
-      // })
-      // .catch((err)=> {
-      //   console.log('Message not sent', err)
-      // })
+    
+    emailjs.send('gmail', process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USERID)
+      .then((result) => {
+          console.log(result.text);
+          resetForm()
+      }, (error) => {
+          console.log(error.text);
+      });
 
-      resetForm()
   }
 
   const resetForm = () => {
@@ -55,26 +61,31 @@ export default function Contact() {
     setSubject('')
     setButtonText('Send')
   }
-
-  return (
+  let success = <h3>Contact Form Submitted!</h3>
+  
+  let form = 
     <div>
       <form className="contact-form" onSubmit={(e) => formSubmit(e)}>
-        <label className="message-name" htmlFor="message-name">Your Name</label>
-        <input onChange={e => setName(e.target.value)} name="name" className="message-name" type="text" placeholder="Your Name" value={name}/>
+        <label className="message-name" htmlFor="name">Your Name</label>
+        <input onChange={e => setName(e.target.value)} id="name" name="name" className="message-name" type="text" placeholder="Your Name" required value={name}/>
 
-        <label className="message-email" htmlFor="message-email">Your Email</label>
-        <input onChange={(e) => setEmail(e.target.value)} name="email" className="message-email" type="email" placeholder="your@email.com" required value={email} />
+        <label className="message-email" htmlFor="email">Your Email</label>
+        <input onChange={(e) => setEmail(e.target.value)} id="email" name="email" className="message-email" type="email" placeholder="your@email.com" required value={email} />
 
-        <label className="message-email" htmlFor="message-subject">Enter Subject</label>
-        <input onChange={(e) => setSubject(e.target.value)} name="subject" className="message-email" type="text" placeholder="topic of inquiry" required value={subject} />
+        <label className="message-email" htmlFor="subject">Enter Subject</label>
+        <input onChange={(e) => setSubject(e.target.value)} id="subject" name="subject" className="message-subject" type="text" placeholder="topic of inquiry" required value={subject} />
 
-        <label className="message" htmlFor="message-input">Your Message</label>
-        <textarea onChange={(e) => setMessage(e.target.value)} cols="60" rows="10" name="message" className="message-input" type="text" placeholder="Please write your message here" value={message} required/>
+        <label className="message" htmlFor="message">Your Message</label>
+        <textarea onChange={(e) => setMessage(e.target.value)} id="message" cols="60" rows="10" name="message" className="message-input" type="text" placeholder="Please write your message here" required value={message} />
         <div >
             <button type="submit" className="button">{buttonText}</button>
         </div>
       </form> 
-      {/* <h3>danny.byrne.dev@gmail.com</h3> */}
     </div>
+
+  let view = !sent ? form : success;
+
+  return (
+    <div>{view}</div>  
   )
 }
