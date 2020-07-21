@@ -22,8 +22,8 @@ test('renders a form with name, email, subject, message fields, and sumbit butto
   getByLabelText(/enter subject/i)
   getByLabelText(/your message/i)
   getByText(/send/i)  
-  // const submitButton = getByText(/send/i)
-  // fireEvent.click(submitButton)
+  const submitButton = getByText(/send/i)
+  fireEvent.click(submitButton)
 
 
 })
