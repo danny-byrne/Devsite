@@ -35,9 +35,11 @@ body {
    color: #333642
 }
 
-.Headline {
-  margin-bottom: 2vh;
-  margin-top: 2vh;
+.Header {
+  // margin-bottom: 2vh;
+  // margin-top: 2vh;
+  height: 10vh;
+  background-color: blue;
 }
 
 .about-text {
@@ -47,8 +49,14 @@ body {
 
 .view {
   display: block;
-  height: 100vh;
-  // background-color: blueviolet;
+  height: 70vh;
+  background-color: blueviolet;
+}
+
+.footer {
+  display: block;
+  height: 15vh;
+  background-color: pink;
 }
 
 $imgContainerSize: 30vh;
@@ -82,8 +90,9 @@ img {
   display: block;
   align-content: center;
   margin: auto;
-  margin-bottom: 2vh;
+  height: 5vh;
   width: 100%;
+  background-color: green;
 }
 
 .NavButton {

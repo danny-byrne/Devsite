@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <div className="App fade-in">
-      <div className="Headline">
+      <div className="Header">
         <h1>Danny Byrne</h1>
             <h3>Software Developer</h3>
       </div>
@@ -37,9 +37,7 @@ export default function App() {
         <div className="NavButton" value="creative" onClick={() => setView("contact")}>Contact</div>
       </div>
       <div className="view">{curView(view)}</div>
-      {/* <div className="contact">
-        <Contact />
-      </div> */}
+      <div className="footer"></div>
     </div>
   );
 }
