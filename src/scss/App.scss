@@ -39,7 +39,7 @@ body {
   // margin-bottom: 2vh;
   // margin-top: 2vh;
   height: 10vh;
-  background-color: blue;
+  // background-color: blue;
 }
 
 .about-text {
@@ -47,16 +47,35 @@ body {
   font-size: 1.7vh;
 }
 
+.NavContainer {
+  display: block;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  height: 5vh;
+  width: 100%;
+  // background-color: green;
+}
+
+.NavButton {
+  display: inline;
+  margin-right: $button-margin;
+  margin-left: $button-margin;
+  font-size: 2vh;
+  cursor: pointer;
+}
+
 .view {
   display: block;
-  height: 70vh;
-  background-color: blueviolet;
+  height: 80vh;
+  // background-color: blueviolet;
+  overflow: hidden;
 }
 
 .footer {
   display: block;
-  height: 15vh;
-  background-color: pink;
+  height: 5vh;
+  // background-color: pink;
 }
 
 $imgContainerSize: 30vh;
@@ -86,22 +105,7 @@ img {
   position: relative;
 }
 
-.NavContainer {
-  display: block;
-  align-content: center;
-  margin: auto;
-  height: 5vh;
-  width: 100%;
-  background-color: green;
-}
 
-.NavButton {
-  display: inline;
-  margin-right: $button-margin;
-  margin-left: $button-margin;
-  font-size: 2vh;
-  cursor: pointer;
-}
 
 .contact-form {
   width: 50vw;

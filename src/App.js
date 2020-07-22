@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import About from './components/About';
-import Creative from './components/Creative';
-import Work from './components/Work';
+import React, { useState } from 'react'
+import About from './components/About'
+import Creative from './components/Creative'
+import Work from './components/Work'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 
 
@@ -17,10 +18,16 @@ export default function App() {
       case 'creative':
          return <Creative />
       case 'contact':
-        return <Contact />
+        return <Contact resetPage={resetPage}/>
       default:
          return <About />
     }
+  }
+
+  const resetPage = () => {
+    setTimeout(() => {
+      setView('about')
+    }, 2000)
   }
 
 
@@ -37,7 +44,9 @@ export default function App() {
         <div className="NavButton" value="creative" onClick={() => setView("contact")}>Contact</div>
       </div>
       <div className="view">{curView(view)}</div>
-      <div className="footer"></div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,9 +1,6 @@
-import React , { useState, useEffect } from 'react';
-import axios from 'axios';
-
-// import { emailjs } from 'emailjs';
+import React , { useState } from 'react';
 import emailjs from 'emailjs-com'
-// require('dotenv').config();
+
 
 /**
  * eventually implement OATH as described in https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
@@ -15,13 +12,14 @@ import emailjs from 'emailjs-com'
  * .env on heroku https://stackoverflow.com/questions/49905070/how-to-add-env-file-or-otherwise-set-environment-variables-in-a-heroku-app
  */
 
-export default function Contact() {
+export default function Contact(props) {
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ subject, setSubject ] = useState('');
   const [ message, setMessage ] = useState('');
   const [ sent, setSent ] = useState(false);
   const [ buttonText, setButtonText ] = useState('Send');
+  const { resetPage }= props;
   // useEffect(() => {
   //   emailjs.init()
   // })
@@ -43,15 +41,18 @@ export default function Contact() {
         subject: subject
     }
 
+    // resetForm()
+    // resetPage();
+
     
     emailjs.send('gmail', process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USERID)
       .then((result) => {
           console.log(result.text);
           resetForm()
+          resetPage();
       }, (error) => {
           console.log(error.text);
       });
-
   }
 
   const resetForm = () => {

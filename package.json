@@ -44,6 +44,7 @@
   "devDependencies": {
     "@testing-library/react": "^9.5.0",
     "eslint": "^6.6.0",
-    "eslint-plugin-react": "^7.20.0"
+    "eslint-plugin-react": "^7.20.0",
+    "react-social-icons": "^4.1.0"
   }
 }
