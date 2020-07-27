@@ -14,18 +14,29 @@ import '@testing-library/jest-dom/extend-expect'
  * https://testing-library.com/docs/dom-testing-library/api-events
  */
 
-test('renders a form with name, email, subject, message fields, and sumbit button', () => {
-  const { getByLabelText, getByText } = render(<Contact />)
+describe('Contact Component is Rendered', () => {
+  render(<Contact />)
 
-  // getByLabelText(/your name/i)
-  getByLabelText(/your email/i)
-  getByLabelText(/enter subject/i)
-  getByLabelText(/your message/i)
-  getByText(/send/i)  
-  const submitButton = getByText(/send/i)
-  fireEvent.click(submitButton)
+  test('renders Contact component', () => {
+    expect(screen.getByText(/send/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/your name/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/your email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/enter subject/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/your message/i)).toBeInTheDocument();
+    // screen.debug();
+    expect(screen.getAllByRole('textbox')).toHaveLength(4);
+    expect(screen.getAllByText(/send/i)).toHaveLength(1);
+  })
 
-
+  test('handles click to submit button', () => {
+    const {  getByText } = render(<Contact />)
+    const button = getByText(/send/i)
+    fireEvent.click(button)
+    // const button = 
+    expect(screen.getByText(/sending/)).toBeInTheDocument();
+  })
 })
+
+
 
 
