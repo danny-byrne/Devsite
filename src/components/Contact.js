@@ -19,19 +19,11 @@ export default function Contact(props) {
   const [ message, setMessage ] = useState('');
   const [ sent, setSent ] = useState(false);
   const [ buttonText, setButtonText ] = useState('Send');
-  const { resetPage }= props;
-  // useEffect(() => {
-  //   emailjs.init()
-  // })
-
- // let URI = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_DEV_URI : process.env.REACT_APP_PROD_URI;
-  // console.log(process.env.REACT_APP_DEV_URI, process.env.REACT_APP_PROD_URI)
-  // console.log(`in ${process.env.NODE_ENV} our URI is ${URI}`)
-  // emailjs.init(`${process.env.REACT_APP_USERID}`)
+  const { resetPage } = props;
+  
 
   async function formSubmit(e){
     e.preventDefault(e)
-    // console.log(e.target)
     setButtonText('...sending')
 
     let data = {
