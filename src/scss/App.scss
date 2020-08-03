@@ -2,6 +2,7 @@
 
 $base-color: #fdfdfb;
 $button-margin: 3vh;
+$mediaMinWidth: 480px;
 
 * {
   padding: 0;
@@ -99,12 +100,23 @@ img {
 }
 
 .SampleBox {
-  margin-top: $button-margin;
+
   width: 50vh;
   height: 70vh;
   position: relative;
-}
 
+  @media (max-width: $mediaMinWidth) {
+    background-color: red;
+    // width: 100vh;
+    // height: 60vh;
+  }
+
+  .worktext {
+    width: 90vmin;
+    word-wrap: break-word;
+    overflow-y: scroll;
+  }
+}
 
 
 .contact-form {

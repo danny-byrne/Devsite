@@ -25,7 +25,6 @@ describe('Contact Component is Rendered', () => {
     expect(screen.getByLabelText(/your email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/enter subject/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/your message/i)).toBeInTheDocument();
-    // screen.debug();
     expect(screen.getAllByRole('textbox')).toHaveLength(4);
     expect(screen.getAllByText(/send/i)).toHaveLength(1);
   })
@@ -34,7 +33,6 @@ describe('Contact Component is Rendered', () => {
     const {  getByText } = render(<Contact />)
     const button = getByText(/send/i)
     fireEvent.click(button)
-    // const button = 
     expect(screen.getByText(/sending/)).toBeInTheDocument();
   })
 })
