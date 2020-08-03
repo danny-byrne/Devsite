@@ -101,20 +101,36 @@ img {
 
 .SampleBox {
 
-  width: 50vh;
-  height: 70vh;
+  width: 50vw;
+  height: 65vh;
   position: relative;
 
   @media (max-width: $mediaMinWidth) {
-    background-color: red;
-    // width: 100vh;
+    // background-color: red;
+    width: 100vw;
     // height: 60vh;
+  }
+  .Sample {
+    @media (max-width: $mediaMinWidth) {
+      // background-color: red;
+      display: inline-block
+      // height: 60vh;
+    }
+    // background-color: lightblue;
+    width: 99%;
+    height: 90%;
+    position: relative;
+    border-style: solid;
+    border-color: #838383;
+    border-radius: 2rem;
+    border-width: 1px;
   }
 
   .worktext {
-    width: 90vmin;
+    width: 100%;
     word-wrap: break-word;
     overflow-y: scroll;
+    // background-color: blueviolet;
   }
 }
 
@@ -132,16 +148,7 @@ img {
   }
 }
 
-.Sample {
-  // background-color: lightblue;
-  width: 99%;
-  height: 90%;
-  position: relative;
-  border-style: solid;
-  border-color: #838383;
-  border-radius: 2rem;
-  border-width: 1px;
-}
+
 
 .skill-list {
   display: block;
