@@ -38,34 +38,4 @@ test('handles navigation state changes with nav clicks', () => {
 })
 
 
-
-
-
-// test('handles navigation onClicks', () => {
-//   const { getByText } = render(
-//     <App />
-//   )
-//   const About = getByText("About");
-//   const Work = getByText("Work");
-//   const Creative = getByText("Creative");
-//   fireEvent.click(About);
-//   fireEvent.click(Work);
-//   fireEvent.click(Creative);
-//   expect(About).toHaveBeenCalledTimes(1);
-//   expect(Work).toHaveBeenCalledTimes(1);
-//   expect(Creative).toHaveBeenCalledTimes(1);
-// })
-
-// test('handles navigation to About', () => {
-//   function handleChange(e) {
-//     expect(e.target.value).toEqual('about');
-//     done();
-//   }
-//   const { getByText } = render(
-//     <App onChange={handleChange} />
-//   );
-//   const node = getByText("About");
-//   fireEvent.change(node, { target: { value: "about"}})
-// });
-
 afterEach(cleanup);

@@ -8,11 +8,10 @@ let express = require('express')
 let bodyParser = require('body-parser')
 let cors = require('cors'), path = require('path')
 let port = process.env.PORT || 3000
-// let emailjs = require('emailjs')
+
 
 require('dotenv').config();
 
-// emailjs.init(`${process.env.USERID}`)
 
 let directory = process.env.NODE_ENV === 'development' ? 'public' : 'build',
 publicPath = path.join(__dirname, '..', directory);

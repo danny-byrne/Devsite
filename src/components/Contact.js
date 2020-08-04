@@ -59,17 +59,17 @@ export default function Contact(props) {
   let form = 
     <div>
       <form className="contact-form" onSubmit={(e) => formSubmit(e)}>
-        <label className="message-name" htmlFor="name">Your Name</label>
-        <input onChange={e => setName(e.target.value)} id="name" name="name" className="message-name" type="text" placeholder="Your Name" required value={name}/>
+        <label className="label" htmlFor="name">Your Name</label>
+        <input onChange={e => setName(e.target.value)} id="name" name="name" className="textinput" type="text" placeholder="Your Name" required value={name}/>
 
-        <label className="message-email" htmlFor="email">Your Email</label>
-        <input onChange={(e) => setEmail(e.target.value)} id="email" name="email" className="message-email" type="email" placeholder="your@email.com" required value={email} />
+        <label className="label" htmlFor="email">Your Email</label>
+        <input onChange={(e) => setEmail(e.target.value)} id="email" name="email" className="textinput" type="email" placeholder="your@email.com" required value={email} />
 
-        <label className="message-email" htmlFor="subject">Enter Subject</label>
-        <input onChange={(e) => setSubject(e.target.value)} id="subject" name="subject" className="message-subject" type="text" placeholder="topic of inquiry" required value={subject} />
+        <label className="label" htmlFor="subject">Enter Subject</label>
+        <input onChange={(e) => setSubject(e.target.value)} id="subject" name="subject" className="textinput" type="text" placeholder="topic of inquiry" required value={subject} />
 
-        <label className="message" htmlFor="message">Your Message</label>
-        <textarea onChange={(e) => setMessage(e.target.value)} id="message" cols="60" rows="10" name="message" className="message-input" type="text" placeholder="Please write your message here" required value={message} />
+        <label className="label" htmlFor="message">Your Message</label>
+        <textarea onChange={(e) => setMessage(e.target.value)} id="message" cols="60" rows="10" name="message" className="message" type="text" placeholder="Please write your message here" required value={message} />
         <div >
             <button type="submit" className="button">{buttonText}</button>
         </div>

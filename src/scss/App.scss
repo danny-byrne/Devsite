@@ -100,25 +100,20 @@ img {
 }
 
 .SampleBox {
-
   width: 50vw;
-  height: 65vh;
+  height: auto;
   position: relative;
 
   @media (max-width: $mediaMinWidth) {
-    // background-color: red;
     width: 100vw;
-    // height: 60vh;
   }
   .Sample {
     @media (max-width: $mediaMinWidth) {
-      // background-color: red;
       display: inline-block
-      // height: 60vh;
     }
-    // background-color: lightblue;
+
     width: 99%;
-    height: 90%;
+    height: 60vh;
     position: relative;
     border-style: solid;
     border-color: #838383;
@@ -129,18 +124,38 @@ img {
   .worktext {
     width: 100%;
     word-wrap: break-word;
-    overflow-y: scroll;
-    // background-color: blueviolet;
+    height: auto;
   }
 }
 
 
 .contact-form {
   width: 50vw;
+  @media (max-width: $mediaMinWidth) {
+    // background-color: red;
+    width: 90vw;
+    // height: 60vh;
+    .message {
+      height: 40vh;
+    }
+    .textinput{
+      height: 5vh;
+    }
+    button {
+      width: 40vw;
+    }
+  }
+
+  .label {
+    padding: 5px;
+    font-size: 1.1rem;
+  }
 
   .message {
-    height: 20vh;
+    height: 40vh;
   }
+
+ 
 
   .button {
     width: 10vw;
