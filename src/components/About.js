@@ -11,8 +11,8 @@ export default function About() {
             <div className="category">{t}:</div>
             <div className="list ">{c}</div>
           </div>
-    )
-  })
+    );
+  });
 
   return (
     <>
@@ -24,5 +24,5 @@ export default function About() {
         {skillList}
       </div>
     </>
-  )
+  );
 }

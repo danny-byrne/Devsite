@@ -5,5 +5,5 @@ export default function Creative() {
     <div>
         Coming Soon...
     </div>
-  )
+  );
 }
