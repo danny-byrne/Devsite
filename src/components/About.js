@@ -1,3 +1,6 @@
+/* eslint-disable import/newline-after-import */
+/* eslint-disable semi */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import * as Constants from '../constants';
 const image = require('../assets/images/Danny1.jpg');
