@@ -6,7 +6,7 @@ import workConstants from '../constants/workConstants';
 export default function Work() {
   return (
     <>
-      <div className="SampleBox">
+      <div className="SampleBox fade-in">
         {workConstants.map((e) => (
           <WorkExample key={e.title} params={e} />
         ))}

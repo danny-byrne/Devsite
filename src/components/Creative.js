@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export default function Creative() {
-  return (
-    <div>
-        Coming Soon...
-    </div>
-  );
+  return <div className="fade-in">Coming Soon...</div>;
 }

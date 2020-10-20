@@ -1,5 +1,13 @@
 const workConstants = [
   {
+    src: 'https://www.uproot.co/',
+    href: 'www.uproot.co',
+    title: 'Uproot',
+    blurb:
+      ' is a progressive web app for locating and engaging politicians across all municipalities, local, county, state, and national. ',
+    tech: 'Ionic Framework, React, GraphQL, Typescript',
+  },
+  {
     src: 'https://www.hookd.dev/',
     href: 'www.hookd.dev',
     title: 'Hookd',
@@ -9,14 +17,6 @@ const workConstants = [
     for detecting component structure where ContextAPI was used,
     and to modify AST Nodes to inject useContext and other hooks accordingly.`,
     tech: 'React, Typescript, Babel',
-  },
-  {
-    src: 'https://www.uproot.co/',
-    href: 'www.uproot.co',
-    title: 'Uproot',
-    blurb:
-      ' is a progressive web app for locating and engaging politicians across all municipalities, local, county, state, and national. ',
-    tech: 'Ionic Framework, React, GraphQL(Apollo), Typescript',
   },
 ];
 

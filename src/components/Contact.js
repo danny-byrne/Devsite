@@ -42,38 +42,95 @@ export default function Contact(props) {
     // resetForm()
     // resetPage();
 
-    emailjs.send('gmail', process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USERID)
-      .then(() => {
-        resetForm();
-        resetPage();
-      }, (error) => {
-        console.log(error.text);
-      });
+    emailjs
+      .send(
+        'gmail',
+        process.env.REACT_APP_TEMPLATE_ID,
+        data,
+        process.env.REACT_APP_USERID
+      )
+      .then(
+        () => {
+          resetForm();
+          resetPage();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   }
 
   const success = <h3>Contact Form Submitted!</h3>;
-  const form = <div>
-      <form className="contact-form" onSubmit={(e) => formSubmit(e)}>
-        <label className="label" htmlFor="name">Your Name</label>
-        <input onChange={(e) => setName(e.target.value)} id="name" name="name" className="textinput" type="text" placeholder="Your Name" required value={name}/>
+  const form = (
+    <div>
+      <form className="contact-form fade-in" onSubmit={(e) => formSubmit(e)}>
+        <label className="label" htmlFor="name">
+          Name
+        </label>
+        <input
+          onChange={(e) => setName(e.target.value)}
+          id="name"
+          name="name"
+          className="textinput"
+          type="text"
+          placeholder="Name"
+          required
+          value={name}
+        />
 
-        <label className="label" htmlFor="email">Your Email</label>
-        <input onChange={(e) => setEmail(e.target.value)} id="email" name="email" className="textinput" type="email" placeholder="your@email.com" required value={email} />
+        <label className="label" htmlFor="email">
+          Email
+        </label>
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          id="email"
+          name="email"
+          className="textinput"
+          type="email"
+          placeholder="your@email.com"
+          required
+          value={email}
+        />
 
-        <label className="label" htmlFor="subject">Enter Subject</label>
-        <input onChange={(e) => setSubject(e.target.value)} id="subject" name="subject" className="textinput" type="text" placeholder="topic of inquiry" required value={subject} />
+        <label className="label" htmlFor="subject">
+          Enter Subject
+        </label>
+        <input
+          onChange={(e) => setSubject(e.target.value)}
+          id="subject"
+          name="subject"
+          className="textinput"
+          type="text"
+          placeholder="what would you like to talk about?"
+          required
+          value={subject}
+        />
 
-        <label className="label" htmlFor="message">Your Message</label>
-        <textarea onChange={(e) => setMessage(e.target.value)} id="message" cols="60" rows="10" name="message" className="message" type="text" placeholder="Please write your message here" required value={message} />
-        <div >
-            <button type="submit" className="button">{buttonText}</button>
+        <label className="label" htmlFor="message">
+          Message
+        </label>
+        <textarea
+          onChange={(e) => setMessage(e.target.value)}
+          id="message"
+          cols="60"
+          rows="10"
+          name="message"
+          className="message"
+          type="text"
+          placeholder="Please write your message here"
+          required
+          value={message}
+        />
+        <div>
+          <button type="submit" className="button">
+            {buttonText}
+          </button>
         </div>
       </form>
-    </div>;
+    </div>
+  );
 
   const view = !sent ? form : success;
 
-  return (
-    <div>{view}</div>
-  );
+  return <div>{view}</div>;
 }

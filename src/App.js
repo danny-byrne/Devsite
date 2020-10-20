@@ -12,6 +12,7 @@ export default function App() {
       setView('about');
     }, 2000);
   };
+
   const curView = () => {
     switch (view) {
       case 'about':
@@ -34,32 +35,40 @@ export default function App() {
         <h3>Software Developer</h3>
       </div>
       <div className="NavContainer fade-in">
-        <div
-          className="NavButton"
-          value="about"
-          onClick={() => setView('about')}
-        >
-          About
-        </div>
-        <div className="NavButton" value="work" onClick={() => setView('work')}>
-          Work
-        </div>
-        <div
-          className="NavButton"
-          value="creative"
-          onClick={() => setView('creative')}
-        >
-          Creative
-        </div>
-        <div
-          className="NavButton"
-          value="creative"
-          onClick={() => setView('contact')}
-        >
-          Contact
+        <div id="NavButtonContainer">
+          <div
+            className="NavButton"
+            value="about"
+            onClick={() => setView('about')}
+          >
+            About
+          </div>
+          <div
+            className="NavButton"
+            value="work"
+            onClick={() => setView('work')}
+          >
+            Work
+          </div>
+          <div
+            className="NavButton"
+            value="creative"
+            onClick={() => setView('creative')}
+          >
+            Creative
+          </div>
+          <div
+            className="NavButton"
+            value="creative"
+            onClick={() => setView('contact')}
+          >
+            Contact
+          </div>
         </div>
       </div>
-      <div className="view">{curView(view)}</div>
+      <div className="view">
+        <div id="ViewContainer fade-in">{curView(view)}</div>
+      </div>
       <Footer />
     </div>
   );
