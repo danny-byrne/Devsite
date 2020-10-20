@@ -21,7 +21,7 @@ export default function App() {
       case 'creative':
         return <Creative />;
       case 'contact':
-        return <Contact resetPage={resetPage}/>;
+        return <Contact resetPage={resetPage} />;
       default:
         return <About />;
     }
@@ -31,18 +31,36 @@ export default function App() {
     <div className="App fade-in">
       <div className="Header">
         <h1>Danny Byrne</h1>
-            <h3>Software Developer</h3>
+        <h3>Software Developer</h3>
       </div>
-      <div className="NavContainer fade-in" >
-        <div className="NavButton" value="about" onClick={() => setView('about')}>About</div>
-        <div className="NavButton" value="work" onClick={() => setView('work')}>Work</div>
-        <div className="NavButton" value="creative" onClick={() => setView('creative')}>Creative</div>
-        <div className="NavButton" value="creative" onClick={() => setView('contact')}>Contact</div>
+      <div className="NavContainer fade-in">
+        <div
+          className="NavButton"
+          value="about"
+          onClick={() => setView('about')}
+        >
+          About
+        </div>
+        <div className="NavButton" value="work" onClick={() => setView('work')}>
+          Work
+        </div>
+        <div
+          className="NavButton"
+          value="creative"
+          onClick={() => setView('creative')}
+        >
+          Creative
+        </div>
+        <div
+          className="NavButton"
+          value="creative"
+          onClick={() => setView('contact')}
+        >
+          Contact
+        </div>
       </div>
       <div className="view">{curView(view)}</div>
-      <div className="footer">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

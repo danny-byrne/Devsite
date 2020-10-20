@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 $base-color: #fdfdfb;
 $button-margin: 3vh;
@@ -20,7 +20,7 @@ h3 {
 
 body {
   background: $base-color;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
@@ -32,8 +32,8 @@ body {
   height: 100vh;
   background: $base-color;
   text-align: center;
-  font-family: "Lato", sans-serif;
-   color: #333642
+  font-family: 'Lato', sans-serif;
+  color: #333642;
 }
 
 .Header {
@@ -88,7 +88,7 @@ $imgContainerSize: 30vh;
   /* Set size of crop area. Setting its location happens bellow. */
   width: $imgContainerSize;
   height: $imgContainerSize;
-  overflow: hidden;  
+  overflow: hidden;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -96,7 +96,7 @@ $imgContainerSize: 30vh;
 img {
   display: block;
   position: relative;
-  left: .1vh;
+  left: 0.1vh;
 }
 
 .SampleBox {
@@ -109,7 +109,7 @@ img {
   }
   .Sample {
     @media (max-width: $mediaMinWidth) {
-      display: inline-block
+      display: inline-block;
     }
 
     width: 99%;
@@ -128,7 +128,6 @@ img {
   }
 }
 
-
 .contact-form {
   width: 50vw;
   @media (max-width: $mediaMinWidth) {
@@ -138,7 +137,7 @@ img {
     .message {
       height: 40vh;
     }
-    .textinput {  
+    .textinput {
       height: 5vh;
     }
     button {
@@ -155,14 +154,11 @@ img {
     height: 40vh;
   }
 
-
   .button {
     width: 20vw;
     height: 25px;
   }
 }
-
-
 
 .skill-list {
   display: block;
@@ -178,7 +174,7 @@ img {
       font-size: 1rem;
       padding-right: 1.5vh;
     }
-    
+
     .list {
       display: inline;
       font-size: 1.2rem;
@@ -207,45 +203,45 @@ $fade: 2000ms;
 
 @keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-moz-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-o-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-ms-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
