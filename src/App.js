@@ -6,7 +6,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [view, setView] = useState('work');
+  const [view, setView] = useState('about');
   const resetPage = () => {
     setTimeout(() => {
       setView('about');
