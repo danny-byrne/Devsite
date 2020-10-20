@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import workConstants from '../constants/workConstants';
 
@@ -5,38 +7,36 @@ export default function Work() {
   return (
     <>
       <div className="SampleBox">
-        <iframe
-          className="Sample"
-          type="text/html"
-          src="https://www.hookd.dev/"
-          title="HOOKD"
-        ></iframe>
-        <div className="worktext">
-          <a href="www.hookd.dev">Hookd</a> is a web-app, npm module, and CLI
-          tool for transforming React components. It was developed using Babel,
-          Typescript and React. A particular contribution of mine to this tool
-          was creating algorithms for detecting component structure where
-          ContextAPI was used, and to modify AST Nodes to inject useContext and
-          other hooks accordingly.
-        </div>
+        {workConstants.map((e) => (
+          <WorkExample key={e.title} params={e} />
+        ))}
       </div>
     </>
   );
 }
 
 const WorkExample = (props) => {
+  const { src, href, title, blurb, tech } = props.params;
+
   return (
     <>
+      <div className="hLine">
+        <span>{title}</span>
+      </div>
       <iframe
         className="Sample"
         type="text/html"
-        src={props.src}
-        title={props.title}
+        src={src}
+        title={title}
       ></iframe>
-      <div className="worktext">
-        <a href={props.href}>{props.title}</a>
-        {props.blurb}
-      </div>
+      <span className="worktext">
+        <a href={href}>{title}</a>
+        {blurb}
+      </span>
+      <br />
+      <span>
+        Technologies: <b>{`${tech}`}</b>
+      </span>
     </>
   );
 };

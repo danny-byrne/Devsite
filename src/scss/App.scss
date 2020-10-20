@@ -70,7 +70,7 @@ body {
   display: block;
   height: 80vh;
   // background-color: blueviolet;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .footer {
@@ -125,6 +125,21 @@ img {
     width: 100%;
     word-wrap: break-word;
     height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .hLine {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    span {
+      color: black;
+      background: $base-color;
+      padding: 0 10px;
+    }
   }
 }
 
