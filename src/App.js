@@ -32,7 +32,7 @@ export default function App() {
     <div className="App fade-in">
       <div className="Header">
         <h1>Danny Byrne</h1>
-        <h3>Software Developer</h3>
+        <h3>Web Developer</h3>
       </div>
       <div className="NavContainer fade-in">
         <div id="NavButtonContainer">
