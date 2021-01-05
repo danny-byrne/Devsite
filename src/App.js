@@ -35,35 +35,29 @@ export default function App() {
         <h3>Web Developer</h3>
       </div>
       <div className="NavContainer fade-in">
-        <div id="NavButtonContainer">
-          <div
-            className="NavButton"
-            value="about"
-            onClick={() => setView('about')}
-          >
-            About
-          </div>
-          <div
-            className="NavButton"
-            value="work"
-            onClick={() => setView('work')}
-          >
-            Work
-          </div>
-          <div
-            className="NavButton"
-            value="creative"
-            onClick={() => setView('creative')}
-          >
-            Creative
-          </div>
-          <div
-            className="NavButton"
-            value="creative"
-            onClick={() => setView('contact')}
-          >
-            Contact
-          </div>
+        <div
+          className="NavButton"
+          value="about"
+          onClick={() => setView('about')}
+        >
+          About
+        </div>
+        <div className="NavButton" value="work" onClick={() => setView('work')}>
+          Work
+        </div>
+        <div
+          className="NavButton"
+          value="creative"
+          onClick={() => setView('creative')}
+        >
+          Creative
+        </div>
+        <div
+          className="NavButton"
+          value="ccontact"
+          onClick={() => setView('contact')}
+        >
+          Contact
         </div>
       </div>
       <div className="view">
