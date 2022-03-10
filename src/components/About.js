@@ -55,7 +55,7 @@ const About = () => {
     return (
       <div key={title} className="skill-item">
         <div className="category">{title}:</div>
-        <div className="list ">{content}</div>
+        <div className="list">{content}</div>
       </div>
     );
   });

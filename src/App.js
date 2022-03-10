@@ -33,7 +33,7 @@ const StyledApp = styled.div`
   }
 
   body {
-    background: $base-color;
+    background: ${baseColor};
     font-family: 'Lato', sans-serif;
     width: 100%;
     min-height: 100vh;
@@ -80,27 +80,6 @@ const StyledApp = styled.div`
     margin: 15px;
   }
 
-  .about {
-    width: 100vw;
-
-    .text {
-      width: 90%;
-      font-size: 1.7vh;
-      display: block;
-
-      @media (min-width: ${mediaMinWidth}) {
-        width: 50%;
-      }
-    }
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 8vh;
-  }
-
   .img-container {
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -117,67 +96,6 @@ const StyledApp = styled.div`
     display: block;
     position: relative;
     left: 0.1vh;
-  }
-
-  .contact-form {
-    width: 50vw;
-    @media (max-width: ${mediaMinWidth}) {
-      width: 90vw;
-
-      .message {
-        height: 40vh;
-      }
-      .textinput {
-        height: 5vh;
-      }
-      button {
-        width: 40vw;
-      }
-    }
-
-    .label {
-      padding: 5px;
-      font-size: 1.1rem;
-    }
-
-    .message {
-      height: 40vh;
-    }
-
-    .button {
-      width: 20vw;
-      height: 25px;
-    }
-  }
-
-  .skill {
-    margin-right: 1vw;
-    margin-bottom: 2vh;
-    width: 100%;
-    color: rgb(1, 114, 129);
-  }
-
-  .skill-list {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    justify-content: flex-start;
-
-    .skill-item {
-      margin-top: 1rem;
-      .category {
-        display: inline;
-        color: #377fb4;
-        font-weight: bold;
-        font-size: 1rem;
-        padding-right: 1.5vh;
-      }
-
-      .list {
-        display: inline;
-        font-size: 1.2rem;
-      }
-    }
   }
 
   .fade-in {
@@ -234,8 +152,8 @@ const StyledApp = styled.div`
   }
 `;
 
-export default function App() {
-  const [view, setView] = useState('about');
+const App = () => {
+  const [view, setView] = useState(VIEWS.about);
   const resetPage = () => {
     setTimeout(() => {
       setView('about');
@@ -280,4 +198,6 @@ export default function App() {
       </div>
     </StyledApp>
   );
-}
+};
+
+export default App;

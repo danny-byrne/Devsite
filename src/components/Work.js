@@ -3,8 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import workConstants from '../constants/workConstants';
-import { STYLE_CONSTANTS } from '../constants';
+import { STYLE_CONSTANTS, WORK_DETAILS } from '../constants';
 
 const { mediaMinWidth, baseColor } = STYLE_CONSTANTS;
 
@@ -17,7 +16,12 @@ const StyledWork = styled.div`
     @media (max-width: ${mediaMinWidth}) {
       width: 100vw;
     }
-    .Sample {
+
+    .sample {
+      margin-bottom: 30px;
+    }
+
+    .iframe {
       @media (max-width: ${mediaMinWidth}) {
         display: inline-block;
       }
@@ -60,7 +64,7 @@ export default function Work() {
   return (
     <StyledWork>
       <div className="SampleBox fade-in">
-        {workConstants.map((e) => (
+        {WORK_DETAILS.map((e) => (
           <WorkExample key={e.title} params={e} />
         ))}
       </div>
@@ -72,16 +76,13 @@ const WorkExample = ({ params }) => {
   const { src, href, title, blurb, tech } = params;
 
   return (
-    <>
+    <div className="sample">
       <div className="hLine">
         <span>{title}</span>
       </div>
-      <iframe
-        className="Sample"
-        type="text/html"
-        src={src}
-        title={title}
-      ></iframe>
+      {src ? (
+        <iframe className="iframe" type="text/html" src={src} title={title} />
+      ) : null}
       <span className="worktext">
         <a href={href}>{title}</a>
         {blurb}
@@ -90,6 +91,6 @@ const WorkExample = ({ params }) => {
       <span>
         Technologies: <b>{`${tech}`}</b>
       </span>
-    </>
+    </div>
   );
 };
