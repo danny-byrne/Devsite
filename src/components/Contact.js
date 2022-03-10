@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import styled from 'styled-components';
+
+import { STYLE_CONSTANTS } from '../constants';
+
+const { mediaMinWidth } = STYLE_CONSTANTS;
 
 /**
  * eventually implement OATH as described in https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
@@ -11,14 +16,46 @@ import emailjs from 'emailjs-com';
  * .env on heroku https://stackoverflow.com/questions/49905070/how-to-add-env-file-or-otherwise-set-environment-variables-in-a-heroku-app
  */
 
-export default function Contact(props) {
+const StyledContact = styled.div`
+  .contact-form {
+    width: 50vw;
+    @media (max-width: ${mediaMinWidth}) {
+      width: 90vw;
+
+      .message {
+        height: 40vh;
+      }
+      .textinput {
+        height: 5vh;
+      }
+      button {
+        width: 40vw;
+      }
+    }
+
+    .label {
+      padding: 5px;
+      font-size: 1.1rem;
+    }
+
+    .message {
+      height: 40vh;
+    }
+
+    .button {
+      width: 20vw;
+      height: 25px;
+    }
+  }
+`;
+
+const Contact = ({ resetPage }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false);
   const [buttonText, setButtonText] = useState('Send');
-  const { resetPage } = props;
 
   const resetForm = () => {
     setName('');
@@ -28,7 +65,7 @@ export default function Contact(props) {
     setButtonText('Send');
   };
 
-  async function formSubmit(e) {
+  const formSubmit = async (e) => {
     e.preventDefault(e);
     setButtonText('...sending');
 
@@ -38,9 +75,6 @@ export default function Contact(props) {
       message,
       subject,
     };
-
-    // resetForm()
-    // resetPage();
 
     emailjs
       .send(
@@ -52,85 +86,92 @@ export default function Contact(props) {
       .then(
         () => {
           resetForm();
+          setSent(true);
           resetPage();
         },
         (error) => {
           console.log(error.text);
         }
       );
-  }
+  };
 
-  const success = <h3>Contact Form Submitted!</h3>;
-  const form = (
-    <div>
-      <form className="contact-form fade-in" onSubmit={(e) => formSubmit(e)}>
-        <label className="label" htmlFor="name">
-          Name
-        </label>
-        <input
-          onChange={(e) => setName(e.target.value)}
-          id="name"
-          name="name"
-          className="textinput"
-          type="text"
-          placeholder="Name"
-          required
-          value={name}
-        />
-
-        <label className="label" htmlFor="email">
-          Email
-        </label>
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          id="email"
-          name="email"
-          className="textinput"
-          type="email"
-          placeholder="your@email.com"
-          required
-          value={email}
-        />
-
-        <label className="label" htmlFor="subject">
-          Enter Subject
-        </label>
-        <input
-          onChange={(e) => setSubject(e.target.value)}
-          id="subject"
-          name="subject"
-          className="textinput"
-          type="text"
-          placeholder="what would you like to talk about?"
-          required
-          value={subject}
-        />
-
-        <label className="label" htmlFor="message">
-          Message
-        </label>
-        <textarea
-          onChange={(e) => setMessage(e.target.value)}
-          id="message"
-          cols="60"
-          rows="10"
-          name="message"
-          className="message"
-          type="text"
-          placeholder="Please write your message here"
-          required
-          value={message}
-        />
+  return (
+    <StyledContact>
+      {sent ? (
+        <h3>Contact Form Submitted!</h3>
+      ) : (
         <div>
-          <button type="submit" className="button">
-            {buttonText}
-          </button>
+          <form
+            className="contact-form fade-in"
+            onSubmit={(e) => formSubmit(e)}
+          >
+            <label className="label" htmlFor="name">
+              Name
+            </label>
+            <input
+              onChange={(e) => setName(e.target.value)}
+              id="name"
+              name="name"
+              className="textinput"
+              type="text"
+              placeholder="Name"
+              required
+              value={name}
+            />
+
+            <label className="label" htmlFor="email">
+              Email
+            </label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              id="email"
+              name="email"
+              className="textinput"
+              type="email"
+              placeholder="your@email.com"
+              required
+              value={email}
+            />
+
+            <label className="label" htmlFor="subject">
+              Enter Subject
+            </label>
+            <input
+              onChange={(e) => setSubject(e.target.value)}
+              id="subject"
+              name="subject"
+              className="textinput"
+              type="text"
+              placeholder="what would you like to talk about?"
+              required
+              value={subject}
+            />
+
+            <label className="label" htmlFor="message">
+              Message
+            </label>
+            <textarea
+              onChange={(e) => setMessage(e.target.value)}
+              id="message"
+              cols="60"
+              rows="10"
+              name="message"
+              className="message"
+              type="text"
+              placeholder="Please write your message here"
+              required
+              value={message}
+            />
+            <div>
+              <button type="submit" className="button">
+                {buttonText}
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      )}
+    </StyledContact>
   );
+};
 
-  const view = !sent ? form : success;
-
-  return <div>{view}</div>;
-}
+export default Contact;

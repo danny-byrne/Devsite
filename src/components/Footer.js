@@ -1,21 +1,34 @@
 import React from 'react';
+import styled from 'styled-components';
 import { SocialIcon } from 'react-social-icons';
 
-export default function Footer() {
-  const dims = 60;
+import { SOCIAL_URLS } from '../constants';
+
+const StyledFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vh;
+  margin-bottom: 10px;
+`;
+
+const size = 60;
+const margin = 7;
+
+const Footer = () => {
   const style = {
-    height: dims,
-    width: dims,
-    marginLeft: 5,
-    marginRight: 5,
+    height: size,
+    width: size,
+    marginLeft: margin,
+    marginRight: margin,
   };
   return (
-    <div className="footer">
-      <SocialIcon
-        style={style}
-        url="https://www.linkedin.com/in/danny-byrne-la/"
-      />
-      <SocialIcon style={style} url="https://github.com/danny-byrne" />
-    </div>
+    <StyledFooter>
+      {Object.values(SOCIAL_URLS).map((url) => (
+        <SocialIcon key={url} style={style} url={url} />
+      ))}
+    </StyledFooter>
   );
-}
+};
+
+export default Footer;
