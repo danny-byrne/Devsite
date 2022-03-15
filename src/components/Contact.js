@@ -48,7 +48,7 @@ const StyledContact = styled.div`
       .textinput {
         height: 5vh;
       }
-      button {
+      .button {
         width: 40vw;
       }
     }
