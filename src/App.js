@@ -153,7 +153,7 @@ const StyledApp = styled.div`
 `;
 
 const App = () => {
-  const [view, setView] = useState(VIEWS.contact);
+  const [view, setView] = useState(VIEWS.about);
   const resetPage = () => {
     setTimeout(() => {
       setView('about');
@@ -187,10 +187,7 @@ const App = () => {
             <NavButton
               key={VIEWS[section]}
               value={VIEWS[section]}
-              onClick={() => {
-                console.log(VIEWS[section]);
-                setView(VIEWS[section]);
-              }}
+              onClick={() => setView(VIEWS[section])}
             />
           ))}
         </div>

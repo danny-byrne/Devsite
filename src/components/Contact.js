@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
-import { Input, Button } from '@mui/material';
+// import { Input, Button } from '@mui/material';
 
 import { STYLE_CONSTANTS } from '../constants';
 
@@ -111,7 +111,7 @@ const Contact = ({ resetPage }) => {
             className="contact-form fade-in"
             onSubmit={(e) => formSubmit(e)}
           >
-            <Input
+            <input
               autoFocus
               onChange={(e) => setName(e.target.value)}
               id="name"
@@ -123,7 +123,7 @@ const Contact = ({ resetPage }) => {
               value={name}
             />
 
-            <Input
+            <input
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               name="email"
@@ -134,7 +134,7 @@ const Contact = ({ resetPage }) => {
               value={email}
             />
 
-            <Input
+            <input
               onChange={(e) => setSubject(e.target.value)}
               id="subject"
               name="subject"
@@ -145,7 +145,7 @@ const Contact = ({ resetPage }) => {
               value={subject}
             />
 
-            <Input
+            <input
               multiline
               onChange={(e) => setMessage(e.target.value)}
               id="message"
@@ -159,9 +159,9 @@ const Contact = ({ resetPage }) => {
               value={message}
             />
 
-            <Button type="submit" className="button outlined">
+            <button type="submit" className="button outlined">
               {buttonText}
-            </Button>
+            </button>
           </form>
         </div>
       )}
