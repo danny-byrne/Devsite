@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
+import { Input, Button } from '@mui/material';
 
 import { STYLE_CONSTANTS } from '../constants';
 
@@ -19,18 +20,9 @@ const { mediaMinWidth } = STYLE_CONSTANTS;
 const StyledContact = styled.div`
   .contact-form {
     width: 50vw;
-    @media (max-width: ${mediaMinWidth}) {
-      width: 90vw;
 
-      .message {
-        height: 40vh;
-      }
-      .textinput {
-        height: 5vh;
-      }
-      button {
-        width: 40vw;
-      }
+    .textinput {
+      margin-bottom: 20px;
     }
 
     .label {
@@ -40,11 +32,25 @@ const StyledContact = styled.div`
 
     .message {
       height: 40vh;
+      margin-bottom: 20px;
     }
 
     .button {
       width: 20vw;
       height: 25px;
+    }
+
+    @media (max-width: ${mediaMinWidth}) {
+      width: 90vw;
+      .message {
+        height: 40vh;
+      }
+      .textinput {
+        height: 5vh;
+      }
+      button {
+        width: 40vw;
+      }
     }
   }
 `;
@@ -105,10 +111,8 @@ const Contact = ({ resetPage }) => {
             className="contact-form fade-in"
             onSubmit={(e) => formSubmit(e)}
           >
-            <label className="label" htmlFor="name">
-              Name
-            </label>
-            <input
+            <Input
+              autoFocus
               onChange={(e) => setName(e.target.value)}
               id="name"
               name="name"
@@ -119,10 +123,7 @@ const Contact = ({ resetPage }) => {
               value={name}
             />
 
-            <label className="label" htmlFor="email">
-              Email
-            </label>
-            <input
+            <Input
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               name="email"
@@ -133,10 +134,7 @@ const Contact = ({ resetPage }) => {
               value={email}
             />
 
-            <label className="label" htmlFor="subject">
-              Enter Subject
-            </label>
-            <input
+            <Input
               onChange={(e) => setSubject(e.target.value)}
               id="subject"
               name="subject"
@@ -147,10 +145,8 @@ const Contact = ({ resetPage }) => {
               value={subject}
             />
 
-            <label className="label" htmlFor="message">
-              Message
-            </label>
-            <textarea
+            <Input
+              multiline
               onChange={(e) => setMessage(e.target.value)}
               id="message"
               cols="60"
@@ -162,11 +158,10 @@ const Contact = ({ resetPage }) => {
               required
               value={message}
             />
-            <div>
-              <button type="submit" className="button">
-                {buttonText}
-              </button>
-            </div>
+
+            <Button type="submit" className="button outlined">
+              {buttonText}
+            </Button>
           </form>
         </div>
       )}
