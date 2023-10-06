@@ -8,7 +8,7 @@ export const SKILLS = [
     content:
       'NextJS, React(Hooks), Redux, SASS/SCSS, Webpack, Babel, Ionic Framework',
   },
-  { title: 'Back End', content: 'Node/Express, RESTful, SQL, NoSQL, GraphQL' },
+  { title: 'Back End', content: 'Node/Express, REST, SQL, NoSQL, GraphQL' },
   {
     title: 'Miscellaneous',
     content:
