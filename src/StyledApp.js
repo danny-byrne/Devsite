@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import styled from 'styled-components';
 import {  STYLE_CONSTANTS } from './constants';
 
@@ -63,13 +65,14 @@ export const StyledApp = styled.div`
   .view {
     display: block;
     height: 78vh;
-    overflow: scroll;
+    width: 100vw;
   }
 
   #ViewContainer {
     width: 100vw;
     display: block;
     margin: 15px;
+    overflow-Y: none;
   }
 
   .img-container {
