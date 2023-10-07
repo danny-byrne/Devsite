@@ -24,6 +24,7 @@ const Footer = () => {
         marginLeft: margin,
         marginRight: margin,
     };
+    
     return (
         <StyledFooter>
             {Object.values(SOCIAL_URLS).map((url) => (
