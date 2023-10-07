@@ -9,6 +9,9 @@ import NavButton from './components/NavButton';
 import { VIEWS } from './constants';
 import { StyledApp } from './StyledApp';
 
+// working through this
+// https://khalilstemmler.com/blogs/tooling/prettier/
+
 const App = () => {
     const [view, setView] = useState(VIEWS.about);
     const resetPage = () => {
