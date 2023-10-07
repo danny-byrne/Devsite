@@ -64,13 +64,14 @@ export const StyledApp = styled.div`
         display: block;
         height: 72vh;
         width: 100vw;
+        // overflow-y: scroll;
     }
 
-    #ViewContainer {
+    .ViewContainer {
         width: 100vw;
         display: block;
         margin: 15px;
-        overflow-y: none;
+        height: 72vh;
     }
 
     .img-container {

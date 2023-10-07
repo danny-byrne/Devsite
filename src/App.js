@@ -54,7 +54,7 @@ const App = () => {
                     ))}
                 </div>
                 <div className="view">
-                    <div id="ViewContainer fade-in">{currentView}</div>
+                    <div className="ViewContainer fade-in">{currentView}</div>
                 </div>
                 <Footer />
             </div>
