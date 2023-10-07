@@ -1,10 +1,11 @@
-/* eslint-disable  */
-
 import React from 'react';
+import { Document } from 'react-pdf';
 import styled from 'styled-components';
 import { SocialIcon } from 'react-social-icons';
 
 import { SOCIAL_URLS } from '../constants';
+
+const RESUME_PATH = '../asssets/dbresume.pdf';
 
 const StyledFooter = styled.div`
     display: flex;
@@ -17,20 +18,12 @@ const StyledFooter = styled.div`
 const size = 60;
 const margin = 7;
 
-const Footer = () => {
-    const style = {
-        height: size,
-        width: size,
-        marginLeft: margin,
-        marginRight: margin,
-    };
+const Resume = () => {
     return (
         <StyledFooter>
-            {Object.values(SOCIAL_URLS).map((url) => (
-                <SocialIcon key={url} style={style} url={url} />
-            ))}
+            <Document file={RESUME_PATH} />
         </StyledFooter>
     );
 };
 
-export default Footer;
+export default Resume;

@@ -1,7 +1,8 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
+
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
-// import { Input, Button } from '@mui/material';
 
 import { STYLE_CONSTANTS } from '../constants';
 
@@ -18,155 +19,145 @@ const { mediaMinWidth } = STYLE_CONSTANTS;
  */
 
 const StyledContact = styled.div`
-  .contact-form {
-    width: 50vw;
+    .contact-form {
+        width: 50vw;
 
-    .textinput {
-      margin-bottom: 20px;
-    }
+        .textinput {
+            margin-bottom: 20px;
+        }
 
-    .label {
-      padding: 5px;
-      font-size: 1.1rem;
-    }
+        .label {
+            padding: 5px;
+            font-size: 1.1rem;
+        }
 
-    .message {
-      height: 40vh;
-      margin-bottom: 20px;
-    }
+        .message {
+            height: 40vh;
+            margin-bottom: 20px;
+        }
 
-    .button {
-      width: 20vw;
-      height: 25px;
-    }
+        .button {
+            width: 20vw;
+            height: 25px;
+        }
 
-    @media (max-width: ${mediaMinWidth}) {
-      width: 90vw;
-      .message {
-        height: 40vh;
-      }
-      .textinput {
-        height: 5vh;
-      }
-      button {
-        width: 40vw;
-      }
+        @media (max-width: ${mediaMinWidth}) {
+            width: 90vw;
+            .message {
+                height: 40vh;
+            }
+            .textinput {
+                height: 5vh;
+            }
+            button {
+                width: 40vw;
+            }
+        }
     }
-  }
 `;
 
 const Contact = ({ resetPage }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-  const [sent, setSent] = useState(false);
-  const [buttonText, setButtonText] = useState('Send');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+    const [sent, setSent] = useState(false);
+    const [buttonText, setButtonText] = useState('Send');
 
-  const resetForm = () => {
-    setName('');
-    setMessage('');
-    setEmail('');
-    setSubject('');
-    setButtonText('Send');
-  };
-
-  const formSubmit = async (e) => {
-    e.preventDefault(e);
-    setButtonText('...sending');
-
-    const data = {
-      name,
-      email,
-      message,
-      subject,
+    const resetForm = () => {
+        setName('');
+        setMessage('');
+        setEmail('');
+        setSubject('');
+        setButtonText('Send');
     };
 
-    emailjs
-      .send(
-        'gmail',
-        process.env.REACT_APP_TEMPLATE_ID,
-        data,
-        process.env.REACT_APP_USERID
-      )
-      .then(
-        () => {
-          resetForm();
-          setSent(true);
-          resetPage();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+    const formSubmit = async (e) => {
+        e.preventDefault(e);
+        setButtonText('...sending');
 
-  return (
-    <StyledContact>
-      {sent ? (
-        <h3>Contact Form Submitted!</h3>
-      ) : (
-        <div>
-          <form
-            className="contact-form fade-in"
-            onSubmit={(e) => formSubmit(e)}
-          >
-            <input
-              autoFocus
-              onChange={(e) => setName(e.target.value)}
-              id="name"
-              name="name"
-              className="textinput"
-              type="text"
-              placeholder="Name"
-              required
-              value={name}
-            />
+        const data = {
+            name,
+            email,
+            message,
+            subject,
+        };
 
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              id="email"
-              name="email"
-              className="textinput"
-              type="email"
-              placeholder="your@email.com"
-              required
-              value={email}
-            />
+        emailjs.send('gmail', process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USERID).then(
+            () => {
+                resetForm();
+                setSent(true);
+                resetPage();
+            },
+            (error) => {
+                console.log(error.text);
+            },
+        );
+    };
 
-            <input
-              onChange={(e) => setSubject(e.target.value)}
-              id="subject"
-              name="subject"
-              className="textinput"
-              type="text"
-              placeholder="what would you like to talk about?"
-              required
-              value={subject}
-            />
+    return (
+        <StyledContact>
+            {sent ? (
+                <h3>Contact Form Submitted!</h3>
+            ) : (
+                <div>
+                    <form className="contact-form fade-in" onSubmit={(e) => formSubmit(e)}>
+                        <input
+                            autoFocus
+                            onChange={(e) => setName(e.target.value)}
+                            id="name"
+                            name="name"
+                            className="textinput"
+                            type="text"
+                            placeholder="Name"
+                            required
+                            value={name}
+                        />
 
-            <input
-              multiline
-              onChange={(e) => setMessage(e.target.value)}
-              id="message"
-              cols="60"
-              rows="10"
-              name="message"
-              className="message"
-              type="text"
-              placeholder="Please write your message here"
-              required
-              value={message}
-            />
+                        <input
+                            onChange={(e) => setEmail(e.target.value)}
+                            id="email"
+                            name="email"
+                            className="textinput"
+                            type="email"
+                            placeholder="your@email.com"
+                            required
+                            value={email}
+                        />
 
-            <button type="submit" className="button outlined">
-              {buttonText}
-            </button>
-          </form>
-        </div>
-      )}
-    </StyledContact>
-  );
+                        <input
+                            onChange={(e) => setSubject(e.target.value)}
+                            id="subject"
+                            name="subject"
+                            className="textinput"
+                            type="text"
+                            placeholder="what would you like to talk about?"
+                            required
+                            value={subject}
+                        />
+
+                        <input
+                            multiline
+                            onChange={(e) => setMessage(e.target.value)}
+                            id="message"
+                            cols="60"
+                            rows="10"
+                            name="message"
+                            className="message"
+                            type="text"
+                            placeholder="Please write your message here"
+                            required
+                            value={message}
+                        />
+
+                        <button type="submit" className="button outlined">
+                            {buttonText}
+                        </button>
+                    </form>
+                </div>
+            )}
+        </StyledContact>
+    );
 };
 
 export default Contact;
