@@ -40,6 +40,8 @@ export const StyledApp = styled.div`
         font-family: 'Lato', sans-serif;
         color: #333642;
         padding-top: 30px;
+        width: 100vw;
+        height: 100vh;
     }
 
     .Header {
@@ -63,7 +65,8 @@ export const StyledApp = styled.div`
     .view {
         display: block;
         height: 72vh;
-        width: 100vw;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .ViewContainer {
