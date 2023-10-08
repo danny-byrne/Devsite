@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
 import About from './components/About';
 import Creative from './components/Creative';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NavButton from './components/NavButton';
+import Resume from './components/Resume';
 import { VIEWS } from './constants';
 import { StyledApp } from './StyledApp';
 
@@ -20,6 +20,8 @@ const App = () => {
         }, 2000);
     };
 
+    //todo: add pdf view
+
     const getCurrentView = () => {
         switch (view) {
             case VIEWS.about:
@@ -30,13 +32,15 @@ const App = () => {
                 return <Creative />;
             case VIEWS.contact:
                 return <Contact resetPage={resetPage} />;
+            case VIEWS.resume:
+                return <Resume />;
             default:
                 return <About />;
         }
     };
 
     const currentView = getCurrentView();
-    console.log('hello ');
+
     return (
         <StyledApp>
             <div className="App fade-in">

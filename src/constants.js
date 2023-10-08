@@ -24,6 +24,7 @@ export const VIEWS = {
     work: 'Work',
     // creative: 'Creative',
     contact: 'Contact',
+    // resume: 'Resume',
 };
 
 export const STYLE_CONSTANTS = {

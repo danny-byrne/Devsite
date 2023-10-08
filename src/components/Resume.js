@@ -1,11 +1,9 @@
 import React from 'react';
-import { Document } from 'react-pdf';
+import { Document, pdfjs } from 'react-pdf';
 import styled from 'styled-components';
-import { SocialIcon } from 'react-social-icons';
+import dbResume from '../assets/dbresume.pdf';
 
-import { SOCIAL_URLS } from '../constants';
-
-const RESUME_PATH = '../asssets/dbresume.pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.js', import.meta.url).toString();
 
 const StyledFooter = styled.div`
     display: flex;
@@ -15,13 +13,10 @@ const StyledFooter = styled.div`
     margin-bottom: 10px;
 `;
 
-const size = 60;
-const margin = 7;
-
 const Resume = () => {
     return (
         <StyledFooter>
-            <Document file={RESUME_PATH} />
+            <Document file={dbResume} />
         </StyledFooter>
     );
 };
