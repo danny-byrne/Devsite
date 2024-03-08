@@ -23,7 +23,7 @@ export const VIEWS = {
     about: 'About',
     work: 'Work',
     // creative: 'Creative',
-    contact: 'Contact',
+    // contact: 'Contact',
     // resume: 'Resume',
 };
 
