@@ -21,7 +21,8 @@ export const TEXT = `Danny Byrne is a software developer, technologist, and arti
 
 export const VIEWS = {
     about: 'About',
-    work: 'Work',
+    // work: 'Work',
+    portfolio: 'Portfolio',
     // creative: 'Creative',
     // contact: 'Contact',
     // resume: 'Resume',

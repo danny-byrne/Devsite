@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NavButton from './components/NavButton';
 import Resume from './components/Resume';
+import Portfolio from './components/Portfolio';
 import { VIEWS } from './constants';
 import { StyledApp } from './StyledApp';
 
@@ -26,6 +27,8 @@ const App = () => {
         switch (view) {
             case VIEWS.about:
                 return <About />;
+            case VIEWS.portfolio:
+                return <Portfolio />;
             case VIEWS.work:
                 return <Work />;
             case VIEWS.creative:

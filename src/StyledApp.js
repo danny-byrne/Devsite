@@ -10,11 +10,10 @@ export const StyledApp = styled.div`
         }
     }
 
-    * {
-        padding: 0;
-        width: 100%;
-        margin: 0 auto;
-    }
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
     h1 {
         font-size: 5vh;
@@ -46,6 +45,7 @@ export const StyledApp = styled.div`
 
     .Header {
         height: 10vh;
+        margin-bottom: 20px;
     }
 
     .NavContainer {
@@ -53,13 +53,13 @@ export const StyledApp = styled.div`
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin: auto;
+        // margin: auto;
         height: 4vh;
         width: 100%;
 
-        @media (min-width: ${mediaMinWidth}) {
-            width: 50%;
-        }
+        // @media (min-width: ${mediaMinWidth}) {
+        //     width: 50%;
+        // }
     }
 
     .view {
@@ -70,11 +70,11 @@ export const StyledApp = styled.div`
     }
 
     .ViewContainer {
-        width: 100vw;
-        display: block;
+        // width: 100vw;
+        // display: block;
         margin: 15px;
         height: 72vh;
-        overflow-y: scroll;
+        // overflow-y: scroll;
     }
 
     .img-container {
