@@ -29,6 +29,7 @@ export const VIEWS = {
 };
 
 export const STYLE_CONSTANTS = {
+    black: '#000000',
     baseColor: '#fdfdfb',
     mediaMinWidth: '600px',
     imgContainerSize: '30vh',

@@ -9,8 +9,15 @@ const image = require('../assets/images/Danny1.jpg');
 const { mediaMinWidth } = STYLE_CONSTANTS;
 
 const StyledAbout = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .about {
-        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 90%;
 
         .text {
             width: 90%;
