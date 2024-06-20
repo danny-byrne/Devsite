@@ -1,6 +1,6 @@
 /*eslint-disable*/
 import React from 'react';
-
+import VideoContainer from './VideoContainer';
 import styled from 'styled-components';
 
 import { STYLE_CONSTANTS } from '../constants';
@@ -24,12 +24,12 @@ const PortfolioExample = styled.div`
 `;
 
 const samples = [
+    // {
+    //     title: 'Dynamic Calendar',
+    //     content: 'This was part of a printable content feature in which I created a clone of ICal functionality..',
+    // },
     {
-        title: 'Dynamic Calendar',
-        content: 'This was part of a printable content feature in which I created a clone of ICal functionality..',
-    },
-    {
-        tltle: 'Maya Health - UI Engineering',
+        title: 'Maya Health - UI Engineering',
         content: 'React with NextJS and ANTD UI components',
         videoLink: ' https://youtu.be/8991sEePRmw',
     },
@@ -38,12 +38,13 @@ const samples = [
 export default function Portfolio() {
     return (
         <StyledPortfolio>
-            <div>Examples (click on the links to launch in new window)</div>
+            {/* <div>Examples (click on the links to launch in new window)</div> */}
             {samples.map((sample) => {
                 return (
                     <PortfolioExample>
                         <div>{sample.title}</div>
                         <div>{sample.content}</div>
+                        {sample.videoLink && <VideoContainer videoId={sample.videoLink} />}
                     </PortfolioExample>
                 );
             })}

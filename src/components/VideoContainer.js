@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import YouTube from 'react-youtube';
-import { pixelWidths } from './utils';
+// import { pixelWidths } from './utils';
 import { useWindowSize } from '../hooks/useWindowSize';
+
+const pixelWidths = {
+    mobile: 768,
+    tablet: 1024,
+    desktop: 1280,
+};
 
 const VideoAndCaptionContainer = styled.div`
     display: flex;
