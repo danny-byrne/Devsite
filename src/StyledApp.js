@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { STYLE_CONSTANTS } from './constants';
 
-const { baseColor, mediaMinWidth, imgContainerSize, fade } = STYLE_CONSTANTS;
+const { baseColor, mediaMinWidth, fade } = STYLE_CONSTANTS;
 
 const APP_HEIGHT = 100;
 const HEADER_HEIGHT = 15;
@@ -82,17 +82,7 @@ export const StyledApp = styled.div`
         // overflow-y: scroll;
     }
 
-    .img-container {
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-
-        /* Set size of crop area. Setting its location happens bellow. */
-        width: ${imgContainerSize};
-        height: ${imgContainerSize};
-        overflow: hidden;
-        border-radius: 50%;
-        object-fit: cover;
-    }
+ 
 
     img {
         display: block;

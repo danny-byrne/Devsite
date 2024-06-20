@@ -6,7 +6,7 @@ import { SKILLS, TEXT, STYLE_CONSTANTS } from '../constants';
 
 const image = require('../assets/images/Danny1.jpg');
 
-const { mediaMinWidth } = STYLE_CONSTANTS;
+const { mediaMinWidth, imgContainerSize } = STYLE_CONSTANTS;
 
 const StyledAbout = styled.div`
     display: flex;
@@ -28,6 +28,18 @@ const StyledAbout = styled.div`
                 width: 50%;
             }
         }
+    }
+
+    .img-container {
+        img {
+            object-fit: fill;
+            width: ${imgContainerSize};
+            height: ${imgContainerSize};
+        }
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        overflow: hidden;
+        border-radius: 50%;
     }
 
     .skill-list {
