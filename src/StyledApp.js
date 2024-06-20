@@ -3,6 +3,12 @@ import { STYLE_CONSTANTS } from './constants';
 
 const { baseColor, mediaMinWidth, imgContainerSize, fade } = STYLE_CONSTANTS;
 
+const APP_HEIGHT = 100;
+const HEADER_HEIGHT = 15;
+const FOOTER_HEIGHT = 10;
+const NAV_CONTAINER_HEIGHT = 4;
+const VIEW_HEIGHT = APP_HEIGHT - (HEADER_HEIGHT + FOOTER_HEIGHT + NAV_CONTAINER_HEIGHT);
+
 export const StyledApp = styled.div`
     @media (min-width: ${mediaMinWidth}) {
         body {
@@ -11,17 +17,11 @@ export const StyledApp = styled.div`
     }
 
     width: 100vw;
-    height: 100vh;
+    height: ${APP_HEIGHT}vh;
     overflow-x: hidden;
     overflow-y: hidden;
 
-    h1 {
-        font-size: 5vh;
-    }
-
-    h3 {
-        font-size: 2.5vh;
-    }
+  
 
     body {
         background: ${baseColor};
@@ -38,14 +38,19 @@ export const StyledApp = styled.div`
         text-align: center;
         font-family: 'Lato', sans-serif;
         color: #333642;
-        padding-top: 30px;
         width: 100vw;
-        height: 100vh;
     }
 
     .Header {
-        height: 10vh;
-        margin-bottom: 20px;
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+    
+        height: ${HEADER_HEIGHT}vh;
     }
 
     .NavContainer {
@@ -54,7 +59,7 @@ export const StyledApp = styled.div`
         justify-content: center;
         align-items: center;
         // margin: auto;
-        height: 4vh;
+        height: ${NAV_CONTAINER_HEIGHT}vh;
         width: 100%;
 
         // @media (min-width: ${mediaMinWidth}) {
@@ -64,7 +69,7 @@ export const StyledApp = styled.div`
 
     .view {
         display: block;
-        height: 72vh;
+        height: ${VIEW_HEIGHT}vh;
         width: 100%;
         overflow-x: hidden;
     }
@@ -72,7 +77,7 @@ export const StyledApp = styled.div`
     .ViewContainer {
         // width: 100vw;
         // display: block;
-        margin: 15px;
+
         height: 72vh;
         // overflow-y: scroll;
     }

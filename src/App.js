@@ -23,6 +23,7 @@ const App = () => {
 
     //todo: add pdf view
 
+    //todo: react router this
     const getCurrentView = () => {
         switch (view) {
             case VIEWS.about:
