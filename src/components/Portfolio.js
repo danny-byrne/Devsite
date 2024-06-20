@@ -28,6 +28,11 @@ const samples = [
         title: 'Dynamic Calendar',
         content: 'This was part of a printable content feature in which I created a clone of ICal functionality..',
     },
+    {
+        tltle: 'Maya Health - UI Engineering',
+        content: 'React with NextJS and ANTD UI components',
+        videoLink: ' https://youtu.be/8991sEePRmw',
+    },
 ];
 
 export default function Portfolio() {
