@@ -49,8 +49,8 @@ const App = () => {
         <StyledApp>
             <div className="App fade-in">
                 <div className="Header">
-                    <h1>Danny Byrne</h1>
-                    <h3>Web Developer</h3>
+                    <div>Danny Byrne</div>
+                    <div>Web Developer</div>
                 </div>
                 <div className="NavContainer fade-in">
                     {Object.keys(VIEWS).map((section) => (

@@ -4,7 +4,7 @@ import { STYLE_CONSTANTS } from './constants';
 const { baseColor, mediaMinWidth, fade } = STYLE_CONSTANTS;
 
 const APP_HEIGHT = 100;
-const HEADER_HEIGHT = 15;
+const HEADER_HEIGHT = 10;
 const FOOTER_HEIGHT = 10;
 const NAV_CONTAINER_HEIGHT = 4;
 const VIEW_HEIGHT = APP_HEIGHT - (HEADER_HEIGHT + FOOTER_HEIGHT + NAV_CONTAINER_HEIGHT);
@@ -42,14 +42,13 @@ export const StyledApp = styled.div`
     }
 
     .Header {
-        h1 {
+        div:nth-child(1) {
             font-size: 2.5rem;
+    
         }
-
-        h3 {
+         div:nth-child(2)  {
             font-size: 1.5rem;
         }
-    
         height: ${HEADER_HEIGHT}vh;
     }
 
