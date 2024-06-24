@@ -50,6 +50,10 @@ export const StyledApp = styled.div`
             font-size: 1.5rem;
         }
         height: ${HEADER_HEIGHT}vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .NavContainer {
