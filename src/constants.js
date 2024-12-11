@@ -46,16 +46,14 @@ export const WORK_DETAILS = [
         src: 'https://www.mayahealth.com/',
         href: 'www.mayahealth.com',
         title: 'Maya Health',
-        blurb:
-            ' empowers providers, participants & researchers to chart real-world evidence for safe psychedelic practices. ',
+        blurb: ' empowers providers, participants & researchers to chart real-world evidence for safe psychedelic practices. ',
         tech: 'NextJS, React, GraphQL, Python/Django',
     },
     {
         src: 'https://www.uproot.co/',
         href: 'www.uproot.co',
         title: 'Uproot',
-        blurb:
-            ' is a progressive web app for locating and engaging politicians across all municipalities, local, county, state, and national municipalities. ',
+        blurb: ' is a progressive web app for locating and engaging politicians across all municipalities, local, county, state, and national municipalities. ',
         tech: 'Ionic Framework, React, GraphQL, Typescript',
     },
     {

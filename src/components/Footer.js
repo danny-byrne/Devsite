@@ -17,6 +17,8 @@ const StyledFooter = styled.div`
 const size = 60;
 const margin = 7;
 
+//TODO: reinstall react-social-icons
+
 const Footer = () => {
     const style = {
         height: size,
@@ -24,7 +26,7 @@ const Footer = () => {
         marginLeft: margin,
         marginRight: margin,
     };
-    
+
     return (
         <StyledFooter>
             {Object.values(SOCIAL_URLS).map((url) => (

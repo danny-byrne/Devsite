@@ -137,7 +137,6 @@ const Contact = ({ resetPage }) => {
                         />
 
                         <input
-                            multiline
                             onChange={(e) => setMessage(e.target.value)}
                             id="message"
                             cols="60"

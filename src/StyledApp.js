@@ -21,8 +21,6 @@ export const StyledApp = styled.div`
     overflow-x: hidden;
     overflow-y: hidden;
 
-  
-
     body {
         background: ${baseColor};
         font-family: 'Lato', sans-serif;
@@ -44,9 +42,8 @@ export const StyledApp = styled.div`
     .Header {
         div:nth-child(1) {
             font-size: 2.5rem;
-    
         }
-         div:nth-child(2)  {
+        div:nth-child(2) {
             font-size: 1.5rem;
         }
         height: ${HEADER_HEIGHT}vh;
@@ -84,8 +81,6 @@ export const StyledApp = styled.div`
         height: 72vh;
         // overflow-y: scroll;
     }
-
- 
 
     img {
         display: block;

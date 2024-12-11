@@ -3,7 +3,7 @@ import About from './components/About';
 import Creative from './components/Creative';
 import Work from './components/Work';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import NavButton from './components/NavButton';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
@@ -64,7 +64,7 @@ const App = () => {
                 <div className="view">
                     <div className="ViewContainer fade-in">{currentView}</div>
                 </div>
-                <Footer />
+                {/* <Footer /> todo: reinstall this */}
             </div>
         </StyledApp>
     );
