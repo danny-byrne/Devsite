@@ -17,14 +17,7 @@ const Layout = ({ children }) => {
                 </div>
                 <div className="NavContainer fade-in">
                     {Object.keys(VIEWS).map((section) => (
-                        <NavButton
-                            key={VIEWS[section]}
-                            value={section}
-                            onClick={() => {
-                                console.log({ section });
-                                navigate(VIEWS[section]);
-                            }}
-                        />
+                        <NavButton key={VIEWS[section]} value={section} onClick={() => navigate(VIEWS[section])} />
                     ))}
                 </div>
                 {children}
