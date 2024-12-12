@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { STYLE_CONSTANTS } from './constants';
+import { STYLE_CONSTANTS } from '../constants';
 
 const { baseColor, mediaMinWidth, fade } = STYLE_CONSTANTS;
 
@@ -9,7 +9,7 @@ const FOOTER_HEIGHT = 10;
 const NAV_CONTAINER_HEIGHT = 4;
 const VIEW_HEIGHT = APP_HEIGHT - (HEADER_HEIGHT + FOOTER_HEIGHT + NAV_CONTAINER_HEIGHT);
 
-export const StyledApp = styled.div`
+export const StyledLayout = styled.div`
     @media (min-width: ${mediaMinWidth}) {
         body {
             background: green;
