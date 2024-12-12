@@ -19,10 +19,10 @@ const Layout = ({ children }) => {
                     {Object.keys(VIEWS).map((section) => (
                         <NavButton
                             key={VIEWS[section]}
-                            value={VIEWS[section]}
+                            value={section}
                             onClick={() => {
                                 console.log({ section });
-                                navigate(section);
+                                navigate(VIEWS[section]);
                             }}
                         />
                     ))}

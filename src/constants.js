@@ -20,9 +20,9 @@ export const TEXT = `Danny Byrne is a software developer, technologist, and arti
   He enjoys exploring new ideas, engaging in practices in personal transformation, and seeking out the wild places of the American West.`;
 
 export const VIEWS = {
-    About: 'About',
+    About: '/About',
     // work: 'Work',
-    Portfolio: 'Portfolio',
+    Portfolio: '/Portfolio',
     // creative: 'Creative',
     // contact: 'Contact',
     // resume: 'Resume',
