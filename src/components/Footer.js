@@ -1,39 +1,22 @@
-/* eslint-disable  */
-
 import React from 'react';
-import styled from 'styled-components';
-import { SocialIcon } from 'react-social-icons';
-
 import { SOCIAL_URLS } from '../constants';
 
-const StyledFooter = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 8vh;
-    margin-bottom: 10px;
-`;
-
-const size = 60;
-const margin = 7;
-
-//TODO: reinstall react-social-icons
-
-const Footer = () => {
-    const style = {
-        height: size,
-        width: size,
-        marginLeft: margin,
-        marginRight: margin,
-    };
-
+export default function Footer() {
     return (
-        <StyledFooter>
-            {Object.values(SOCIAL_URLS).map((url) => (
-                <SocialIcon key={url} style={style} url={url} />
-            ))}
-        </StyledFooter>
+        <footer className="site-footer">
+            <div>
+                <strong>Danny Byrne</strong>
+                <p>Developer, technologist & artist.</p>
+            </div>
+            <div className="footer-links">
+                <a href={SOCIAL_URLS.linkedin} target="_blank" rel="noopener noreferrer">
+                    LinkedIn ↗
+                </a>
+                <a href={SOCIAL_URLS.github} target="_blank" rel="noopener noreferrer">
+                    GitHub ↗
+                </a>
+            </div>
+            <small>© {new Date().getFullYear()} Danny Byrne</small>
+        </footer>
     );
-};
-
-export default Footer;
+}

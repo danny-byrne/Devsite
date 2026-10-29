@@ -3,16 +3,16 @@
 export const SKILLS = [
     {
         title: 'Languages',
-        content: 'Javascript(ES6+), Typescript,  HTML5/CSS3/Sass',
+        content: 'JavaScript (ES6+), TypeScript, HTML, CSS, Sass',
     },
     {
         title: 'Front End',
-        content: 'NextJS, React(Hooks), Redux, SASS/SCSS, Webpack, Babel, Ionic Framework',
+        content: 'React, Next.js, Redux, Sass, Webpack, Babel, Ionic Framework',
     },
     { title: 'Back End', content: 'Node/Express, REST, SQL, NoSQL, GraphQL' },
     {
         title: 'Miscellaneous',
-        content: 'Websockets, TDD, AWS(ES2, Elastik Beanstalk, DynamoDB), CI/CD, OAuth, Apollo(Client/Server)',
+        content: 'WebSockets, TDD, AWS (EC2, Elastic Beanstalk, DynamoDB), CI/CD, OAuth, Apollo Client / Server',
     },
 ];
 

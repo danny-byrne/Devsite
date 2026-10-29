@@ -1,53 +1,129 @@
-/*eslint-disable*/
 import React from 'react';
-import VideoContainer from './VideoContainer';
-import styled from 'styled-components';
 
-import { STYLE_CONSTANTS } from '../constants';
-
-const { black } = STYLE_CONSTANTS;
-
-const StyledPortfolio = styled.div`
-    // border: 1px solid ${black};
-    height: 95%;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-`;
-
-const PortfolioExample = styled.div`
-    // border: 1px solid ${black};
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-`;
-
-const samples = [
-    // {
-    //     title: 'Dynamic Calendar',
-    //     content: 'This was part of a printable content feature in which I created a clone of ICal functionality..',
-    // },
-    {
-        title: 'Maya Health - UI Engineering',
-        content: 'React with NextJS and ANTD UI components',
-        videoId: '8991sEePRmw',
-    },
-];
-
+const source = 'https://github.com/danny-byrne/care-tracker/tree/kindred-care-demo/demo';
 export default function Portfolio() {
     return (
-        <StyledPortfolio>
-            {/* <div>Examples (click on the links to launch in new window)</div> */}
-            {samples.map((sample) => {
-                return (
-                    <PortfolioExample>
-                        <div>{sample.title}</div>
-                        <div>{sample.content}</div>
-                        {sample.videoId && <VideoContainer videoId={sample.videoId} />}
-                    </PortfolioExample>
-                );
-            })}
-        </StyledPortfolio>
+        <>
+            <section className="work-heading">
+                <p className="eyebrow">SELECTED WORK</p>
+                <h1>Ideas, made tangible.</h1>
+                <p>Interactive projects and a look at the product work behind them.</p>
+            </section>
+            <article className="project featured-project">
+                <div className="project-image">
+                    <a
+                        href="/demos/kindred/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open Kindred live demo"
+                    >
+                        <img
+                            src="/images/kindred-preview.jpg"
+                            alt="Kindred dashboard showing a fictional recipient’s daily care schedule"
+                        />
+                    </a>
+                </div>
+                <div className="project-detail">
+                    <p className="eyebrow">01 / INTERACTIVE DEMO</p>
+                    <h2>Kindred</h2>
+                    <p className="project-subtitle">A little more clarity in everyday care.</p>
+                    <p>
+                        An independent care coordination demo built around a fictional recipient and care circle. One
+                        schedule powers a daily overview, weekly calendar, and printable plan.
+                    </p>
+                    <ul className="feature-list">
+                        <li>Create, edit, and delete appointments</li>
+                        <li>Navigate weeks and view overlapping events</li>
+                        <li>Check off tasks, save changes locally, and reset</li>
+                        <li>Print a weekly care plan or save it as a PDF</li>
+                    </ul>
+                    <div className="tags">
+                        <span>JavaScript</span>
+                        <span>Responsive CSS</span>
+                        <span>Local storage</span>
+                        <span>Print layouts</span>
+                    </div>
+                    <div className="actions">
+                        <a className="button primary" href="/demos/kindred/" target="_blank" rel="noopener noreferrer">
+                            Launch demo ↗
+                        </a>
+                        <a className="button secondary" href={source} target="_blank" rel="noopener noreferrer">
+                            View source ↗
+                        </a>
+                    </div>
+                    <p className="project-note">
+                        Fresh implementation of care coordination concepts relevant to my frontend experience. No
+                        Microsoft product source, branding, or real care data. No download or sign-in required.
+                    </p>
+                </div>
+            </article>
+            <div className="project-grid">
+                <article className="project small-project">
+                    <p className="eyebrow">02 / DOCUMENT-DRIVEN PUBLISHING</p>
+                    <h2>Strange Ripples</h2>
+                    <p>
+                        A DOCX-to-React publishing prototype: turn Word documents into styled articles with custom
+                        markers for quote boxes, images, and embedded video.
+                    </p>
+                    <div className="tags">
+                        <span>Next.js</span>
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Mammoth</span>
+                    </div>
+                    <a
+                        className="text-link"
+                        href="https://github.com/danny-byrne/Strange-Ripples/tree/portfolio-readme-refresh"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Explore source & setup ↗
+                    </a>
+                </article>
+                <article className="project small-project">
+                    <p className="eyebrow">03 / PRODUCT UI ENGINEERING</p>
+                    <h2>Maya Health</h2>
+                    <p>
+                        A video walkthrough of my UI engineering work using React, Next.js, and Ant Design. A look at
+                        the interface work beyond the repository.
+                    </p>
+                    <div className="tags">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>Ant Design</span>
+                    </div>
+                    <a
+                        className="text-link"
+                        href="https://www.youtube.com/watch?v=8991sEePRmw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Watch project walkthrough ↗
+                    </a>
+                </article>
+            </div>
+            <section className="work-cta">
+                <h2>Let’s build something useful.</h2>
+                <p>Find more projects on GitHub, or connect with me on LinkedIn.</p>
+                <div className="actions">
+                    <a
+                        className="button secondary"
+                        href="https://github.com/danny-byrne"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        More on GitHub ↗
+                    </a>
+                    <a
+                        className="text-link"
+                        href="https://www.linkedin.com/in/danny-byrne-la/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Connect on LinkedIn ↗
+                    </a>
+                </div>
+            </section>
+        </>
     );
 }

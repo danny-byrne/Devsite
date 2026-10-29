@@ -1,30 +1,33 @@
-import React from 'react';
-import { useNavigate } from 'react-router';
+import React, { useEffect } from 'react';
+import { Link, NavLink, useLocation } from 'react-router';
 import Footer from './Footer';
-import { StyledLayout } from './StyledLayout';
-import { VIEWS } from '../constants';
-import NavButton from './NavButton';
 
-const Layout = ({ children }) => {
-    let navigate = useNavigate();
-
+export default function Layout({ children }) {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     return (
-        <StyledLayout>
-            <div className="App fade-in">
-                <div className="Header">
-                    <div>Danny Byrne</div>
-                    <div>Web Developer</div>
-                </div>
-                <div className="NavContainer fade-in">
-                    {Object.keys(VIEWS).map((section) => (
-                        <NavButton key={VIEWS[section]} value={section} onClick={() => navigate(VIEWS[section])} />
-                    ))}
-                </div>
-                {children}
-                <Footer />
-            </div>
-        </StyledLayout>
+        <div className="site-shell">
+            <a className="skip-link" href="#main">
+                Skip to content
+            </a>
+            <header className="site-header">
+                <Link to="/" className="wordmark" aria-label="Danny Byrne home">
+                    danny byrne<span>.</span>
+                </Link>
+                <nav aria-label="Main navigation">
+                    <NavLink to="/About" className={({ isActive }) => (isActive || pathname === '/' ? 'active' : '')}>
+                        About
+                    </NavLink>
+                    <NavLink to="/Portfolio">Selected work</NavLink>
+                    <a href="https://github.com/danny-byrne" target="_blank" rel="noopener noreferrer">
+                        GitHub ↗
+                    </a>
+                </nav>
+            </header>
+            <main id="main">{children}</main>
+            <Footer />
+        </div>
     );
-};
-
-export default Layout;
+}
