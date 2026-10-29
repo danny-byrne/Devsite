@@ -33,3 +33,11 @@ test('unknown routes offer a way back to selected work', () => {
     fireEvent.click(screen.getByRole('link', { name: /explore selected work/i }));
     expect(screen.getByRole('heading', { name: 'Kindred' })).toBeInTheDocument();
 });
+
+test('publishing demo uses neutral content and does not link the personal article', () => {
+    window.history.replaceState({}, '', '/Portfolio');
+    render(<App />);
+    expect(screen.getByRole('heading', { name: 'Fieldnotes' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /launch publishing demo/i })).toHaveAttribute('href', '/demos/fieldnotes/');
+    expect(document.querySelector('a[href*="Strange-Ripples"]')).toBeNull();
+});

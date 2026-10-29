@@ -54,3 +54,9 @@ The focused navigation tests cover access to Selected work and the same-origin d
 ## Deployment scope
 
 This branch prepares the portfolio for deployment; it does not change custom-domain DNS or the existing hosting account. The bundled demo becomes publicly accessible when this portfolio build is deployed to a public host.
+
+## DOCX publishing demo
+
+The Selected work page features Fieldnotes, a neutral DOCX-to-React demo served at `/demos/fieldnotes/`. It uses new fictional documents and an original illustration. Its source is in `danny-byrne/docx-publishing-demo` with fresh history. The portfolio no longer links to the personal article project. The original personal repository was not modified or hidden.
+
+To update Fieldnotes, run `npm ci && npm run build` in its repository, replace `public/demos/fieldnotes/` with that `dist/` output, and rebuild the portfolio.

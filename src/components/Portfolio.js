@@ -60,25 +60,30 @@ export default function Portfolio() {
             <div className="project-grid">
                 <article className="project small-project">
                     <p className="eyebrow">02 / DOCUMENT-DRIVEN PUBLISHING</p>
-                    <h2>Strange Ripples</h2>
+                    <h2>Fieldnotes</h2>
                     <p>
-                        A DOCX-to-React publishing prototype: turn Word documents into styled articles with custom
-                        markers for quote boxes, images, and embedded video.
+                        A DOCX-to-React publishing demo with a fictional field journal. Convert a local Word document,
+                        inspect its HTML, and explore quote boxes, callouts, and illustrated article components.
                     </p>
                     <div className="tags">
-                        <span>Next.js</span>
                         <span>React</span>
-                        <span>TypeScript</span>
+                        <span>JavaScript</span>
                         <span>Mammoth</span>
+                        <span>Vite</span>
                     </div>
-                    <a
-                        className="text-link"
-                        href="https://github.com/danny-byrne/Strange-Ripples/tree/portfolio-readme-refresh"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Explore source & setup ↗
-                    </a>
+                    <div className="actions" style={{ marginTop: 0 }}>
+                        <a className="text-link" href="/demos/fieldnotes/" target="_blank" rel="noopener noreferrer">
+                            Launch publishing demo ↗
+                        </a>
+                        <a
+                            className="text-link"
+                            href="https://github.com/danny-byrne/docx-publishing-demo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View publishing source ↗
+                        </a>
+                    </div>
                 </article>
                 <article className="project small-project">
                     <p className="eyebrow">03 / PRODUCT UI ENGINEERING</p>
